@@ -1,0 +1,201 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Construction & Buildings",
+    "title": "Building Kuwait's Landmarks for Nearly 40 Years",
+    "subtitle": "From government headquarters to iconic towers, hospitals, and coastal developments — Al Waqt Al Nageh delivers construction excellence across Kuwait and Saudi Arabia.",
+    "cta_projects": "View Our Projects",
+    "cta_contact": "Contact Us"
+  },
+  "stats": {
+    "years": "Years of Experience",
+    "projects": "Completed Projects",
+    "countries": "Countries",
+    "sectors": "Project Sectors"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "About Al Waqt Al Nageh",
+    "heading": "We build more than buildings. We build trust and commitment.",
+    "text": "Al Waqt Al Nageh is an established construction company with nearly four decades of experience in construction and building, having contributed to governmental, commercial, healthcare, hospitality, and high-rise projects across Kuwait and Saudi Arabia.",
+    "cta": "Learn More",
+    "pillars": {
+      "quality": {
+        "title": "Quality",
+        "text": "We uphold the highest quality standards at every stage of the project."
+      },
+      "experience": {
+        "title": "Experience",
+        "text": "More than 40 years of experience in construction and building."
+      },
+      "commitment": {
+        "title": "Commitment",
+        "text": "We deliver our projects on the agreed schedule, every time."
+      }
+    }
+  },
+  "categories": {
+    "title": "What We Build",
+    "governmental": "Governmental",
+    "towers": "Towers",
+    "commercial": "Commercial & Hotels",
+    "health": "Health Institutions",
+    "coastal": "Coastal Development",
+    "airports": "Airports",
+    "eyebrow": "Our Categories",
+    "headingLead": "Our Fields of",
+    "headingAccent": "Expertise",
+    "subtitle": "We deliver diverse projects across vital sectors, meeting the needs of every client in every field.",
+    "cta": "Explore all projects",
+    "tagline": "Building a better tomorrow",
+    "projectsCount_one": "{{count}} Project",
+    "projectsCount_other": "{{count}} Projects"
+  },
+  "featured": {
+    "eyebrow": "Selected Projects",
+    "headingLine1": "Building a Future",
+    "headingLine2": "of Greater Value.",
+    "subtitle": "Integrated design and execution that raises the value of life and delivers lasting worth.",
+    "cta": "Explore all projects"
+  },
+  "khobar": {
+    "tag": "Latest Project — Saudi Arabia",
+    "title": "The Avenues Khobar",
+    "text": "A mixed-use landmark development in Al Khobar spanning approximately 197,000 m², featuring the Canopy Tower, retail avenues, and entertainment districts.",
+    "cta": "View Project"
+  },
+  "cta": {
+    "title": "Have a Project in Mind?",
+    "subtitle": "Let's build it together.",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "aboutPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "About Us",
+    "heroEyebrow": "About Us",
+    "heroTitle": "Nearly 40 Years of Building Trust",
+    "heroSubtitle": "A Kuwait-based construction company with a growing presence across the region.",
+    "storyEyebrow": "Our Story",
+    "storyTitle": "Building with Confidence, Creating Lasting Impact",
+    "storyText1": "For more than 40 years, we have been shaping the way people live, work and connect. With a commitment to excellence and a vision for the future, we continue to build trust, create value, and deliver landmarks that stand the test of time.",
+    "storyText2": "We work closely with clients, consultants, and partners to deliver integrated solutions with high quality, precision in execution, and full commitment to schedules and standards.",
+    "timeline": {
+      "founded": {
+        "label": "Founded in Kuwait",
+        "text": "Nearly 40 years ago, laying the foundation for a long track record in construction and building."
+      },
+      "ksa": {
+        "label": "Expansion into Saudi Arabia",
+        "text": "More than 3 years of operations delivering projects in the Kingdom."
+      },
+      "khobar": {
+        "label": "The Avenues Khobar",
+        "text": "Our latest and largest project to date, currently underway in Al Khobar."
+      },
+      "today": {
+        "label": "Today & Beyond",
+        "text": "Continuing to grow our presence across Kuwait and Saudi Arabia, one landmark at a time."
+      }
+    },
+    "visionTitle": "Our Vision",
+    "visionText": "To be a trusted and leading construction company, recognized for delivering high-quality projects, professional excellence, and sustainable value across the region.",
+    "missionTitle": "Our Mission",
+    "missionText": "To deliver reliable, high-quality construction solutions through expertise, commitment, and attention to detail, building lasting partnerships while maintaining the highest standards of quality, safety, efficiency, and integrity.",
+    "valuesEyebrow": "What Drives Us",
+    "valuesTitle": "Our Core Values",
+    "values": {
+      "quality": {
+        "title": "Quality",
+        "text": "We commit to the highest quality standards at every stage of every project we deliver."
+      },
+      "experience": {
+        "title": "Experience",
+        "text": "More than 40 years of hands-on experience across governmental, commercial, and residential construction."
+      },
+      "commitment": {
+        "title": "Commitment",
+        "text": "We hand over our projects on schedule, without compromising on safety or workmanship."
+      }
+    },
+    "storyTitleLine1": "Building more",
+    "storyTitleLine2": "than structures",
+    "milestones": {
+      "begin": {
+        "era": "1980s",
+        "title": "The beginning",
+        "text": "Rooted in Kuwait. Built on purpose, driven by ambition."
+      },
+      "expand": {
+        "era": "1990s",
+        "title": "Expanding horizons",
+        "text": "Growing our capabilities and delivering iconic projects across Kuwait."
+      },
+      "impact": {
+        "era": "2000s",
+        "title": "Building impact",
+        "text": "Strengthening our presence in key sectors and setting new benchmarks."
+      },
+      "future": {
+        "era": "2010s & Beyond",
+        "title": "Shaping the future",
+        "text": "Extending our vision to Saudi Arabia and building destinations that define tomorrow."
+      }
+    },
+    "visionMissionHeading": "Vision & Mission"
+  },
+  "projectsPage": {
+    "breadcrumbCurrent": "Projects",
+    "heroTitle": "Our Projects",
+    "heroSubtitle": "A portfolio of landmark developments across Kuwait and Saudi Arabia.",
+    "filterAll": "All",
+    "viewProject": "View Project",
+    "contractValue": "Contract Value",
+    "duration": "Duration",
+    "category": "Category",
+    "location": "Location",
+    "backToProjects": "Back to Projects",
+    "otherProjects": "Other Projects",
+    "noResults": "No projects in this category yet.",
+    "overview": "Project Overview"
+  },
+  "contactPage": {
+    "heroTitle": "Contact Us",
+    "heroSubtitle": "Have a project in mind? We'd love to hear from you.",
+    "officesEyebrow": "Our Offices",
+    "kuwaitOffice": "Kuwait Office",
+    "ksaOffice": "Saudi Arabia Office",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "addressPlaceholder": "Address to be provided",
+    "phonePlaceholder": "Phone number to be provided",
+    "emailPlaceholder": "email@alwaqtalnageh.com",
+    "formTitle": "Send Us a Message",
+    "formName": "Full Name",
+    "formEmail": "Email Address",
+    "formPhone": "Phone Number",
+    "formSubject": "Subject",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Tell us about your project...",
+    "formSubmit": "Send Message",
+    "formSending": "Sending...",
+    "formSuccessTitle": "Message sent",
+    "formSuccessText": "Thank you for reaching out. Our team will get back to you shortly.",
+    "formSendAnother": "Send another message",
+    "mapCaption": "Map location to be added",
+    "subjects": {
+      "general": "General Inquiry",
+      "project": "New Project",
+      "career": "Careers",
+      "other": "Other"
+    }
+  }
+}

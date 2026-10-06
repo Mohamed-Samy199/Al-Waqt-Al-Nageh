@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[dir='rtl'] body {
+  font-family: 'Tajawal', sans-serif;
+}
+html[dir='ltr'] body {
+  font-family: 'Inter', sans-serif;
+}
+html[dir='rtl'] h1, html[dir='rtl'] h2, html[dir='rtl'] h3 {
+  font-family: 'Tajawal', sans-serif;
+}
+html[dir='ltr'] h1, html[dir='ltr'] h2, html[dir='ltr'] h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  @apply bg-white text-neutral-700;
+}
+
+html, body {
+  overflow-x: hidden;
+}
