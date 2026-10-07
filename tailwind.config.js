@@ -63,3 +63,122 @@ export default {
   },
   plugins: [],
 };
+
+
+
+
+// /** @type {import('tailwindcss').Config} */
+// export default {
+//   content: ['./index.html', './src/**/*.{js,jsx}'],
+
+//   theme: {
+//     extend: {
+//       colors: {
+//         // Light blue palette
+//         primary: {
+//           50: '#EFF6FF',
+//           100: '#DBEAFE',
+//           300: '#93C5FD',
+//           600: '#2563EB',
+//           700: '#1D4ED8',
+//           900: '#1E3A8A',
+//         },
+
+//         ink: '#000000',
+
+//         neutral: {
+//           50: '#F7F8FA',
+//           100: '#EEF0F4',
+//           200: '#DCE0E8',
+//           500: '#6B7280',
+//           700: '#374151',
+//         },
+
+//         // Gold accent colors kept as they are
+//         accent: '#B08D57',
+//         'accent-bright': '#FFCD5C',
+//         'accent-glow': '#FFE29A',
+//       },
+
+//       fontFamily: {
+//         heading: ['Montserrat', 'sans-serif'],
+//         body: ['Inter', 'sans-serif'],
+//         arHeading: ['Tajawal', 'sans-serif'],
+//         arBody: ['Tajawal', 'sans-serif'],
+//       },
+
+//       keyframes: {
+//         'aerial-push': {
+//           '0%': {
+//             transform: 'scale(1) translate3d(0, 0, 0)',
+//             filter: 'saturate(.92) brightness(.9)',
+//           },
+
+//           '100%': {
+//             transform: 'scale(1.22) translate3d(0, -2%, 0)',
+//             filter: 'saturate(1) brightness(1)',
+//           },
+//         },
+
+//         'video-settle': {
+//           '0%': {
+//             transform: 'scale(1.035)',
+//           },
+
+//           '100%': {
+//             transform: 'scale(1)',
+//           },
+//         },
+
+//         'copy-reveal': {
+//           '0%': {
+//             opacity: '0',
+//             transform: 'translate3d(34px, 0, 0)',
+//           },
+
+//           '100%': {
+//             opacity: '1',
+//             transform: 'translate3d(0, 0, 0)',
+//           },
+//         },
+
+//         progress: {
+//           '0%': {
+//             width: '0%',
+//           },
+
+//           '100%': {
+//             width: '100%',
+//           },
+//         },
+
+//         'gentle-zoom': {
+//           '0%, 100%': {
+//             transform: 'scale(1)',
+//           },
+
+//           '50%': {
+//             transform: 'scale(1.06)',
+//           },
+//         },
+//       },
+
+//       animation: {
+//         'aerial-push':
+//           'aerial-push 7000ms cubic-bezier(0.16, 1, 0.3, 1) both',
+
+//         'video-settle':
+//           'video-settle 7000ms cubic-bezier(0.22, 1, 0.36, 1) both',
+
+//         'copy-reveal':
+//           'copy-reveal 800ms 150ms cubic-bezier(0.22, 1, 0.36, 1) both',
+
+//         progress: 'progress 7000ms linear both',
+
+//         'gentle-zoom': 'gentle-zoom 8s ease-in-out infinite',
+//       },
+//     },
+//   },
+
+//   plugins: [],
+// };

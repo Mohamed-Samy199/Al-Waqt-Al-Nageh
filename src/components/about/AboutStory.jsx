@@ -96,6 +96,9 @@ export default function StoryHero() {
               <p className="mt-7 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700">
                 {t('aboutPage.storyText1')}
               </p>
+              <p className="mt-3 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700">
+                {t('aboutPage.storyText2')}
+              </p>
 
               <div className="absolute bottom-5 start-9 end-[4.5rem] flex items-center gap-4 sm:start-11">
                 <span className="h-2.5 w-2.5 bg-accent" />

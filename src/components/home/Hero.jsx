@@ -10,13 +10,13 @@ const slides = [
     src: "/images/hero/hero-editorial.png",
     ar: {
       eyebrow: "الوقت الناجح للإنشاءات والمباني",
-      title: "نبني بثقة… ونصنع أثرًا يدوم",
+      title: "الناجح... بالوقت نبني و بالجودة ننجح",
       description:
         "خبرة تمتد لأكثر من 40 عامًا في تنفيذ المشاريع الإنشائية الكبرى في الكويت والمملكة العربية السعودية.",
     },
     en: {
       eyebrow: "AL NAGEH CONSTRUCTION & BUILDINGS",
-      title: "Building with confidence. Creating lasting impact.",
+      title: "Al-Najeh... Building with time, succeeding with quality.",
       description:
         "More than 40 years of experience delivering landmark construction projects across Kuwait and Saudi Arabia.",
     },
@@ -192,7 +192,7 @@ export default function Hero() {
           <span className="mb-[18px] block font-heading text-xs font-semibold tracking-[0.18em] text-accent-bright">
             {/* {copy.eyebrow} */}
           </span>
-          <h1 className="m-0 max-w-[650px] font-arHeading text-[clamp(36px,11vw,54px)] font-extrabold leading-[1.08] tracking-[-0.04em] md:text-[clamp(38px,5vw,76px)] mt-16">
+          <h1 className="m-0 max-w-[690px] font-arHeading text-[clamp(36px,11vw,54px)] font-extrabold leading-[1.08] tracking-[-0.04em] md:text-[clamp(38px,5vw,76px)] mt-16">
             {copy.title}
           </h1>
           <p className="mt-[17px] max-w-[500px] font-arBody text-base leading-[1.9] text-white/80 md:mt-6 md:text-xl">

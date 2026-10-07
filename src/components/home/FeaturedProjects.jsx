@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { projects } from '../../data/projects';
+import { projectHome } from '../../data/projects';
 
 const VISIBLE_COUNT = 4;
 const AUTO_PLAY_DELAY = 2000;
@@ -79,7 +79,7 @@ export default function FeaturedProjects() {
 
   // Only the 5 flagship projects (flagged `featured: true` in projects.js)
   // appear in this carousel -- the full 15-project catalog lives on /projects.
-  const featuredProjects = useMemo(() => projects.filter((p) => p.featured), []);
+  const featuredProjects = useMemo(() => projectHome.filter((p) => p.featured), []);
 
   const carouselProjects = useMemo(() => {
     if (featuredProjects.length <= VISIBLE_COUNT) return featuredProjects;

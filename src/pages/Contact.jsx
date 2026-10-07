@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Container from '../components/ui/Container';
 import PageHero from '../components/shared/PageHero';
+import LocationMap from '../components/contact/LocationMap';
 
 function PinIcon() {
   return (
@@ -102,16 +103,16 @@ export default function Contact() {
               <span className="text-sm font-semibold tracking-wide text-primary-700">{t('contactPage.officesEyebrow')}</span>
             </div>
             <div className="space-y-6">
-              <OfficeCard
+              {/* <OfficeCard
                 title={t('contactPage.kuwaitOffice')}
                 address={t('contactPage.addressPlaceholder')}
                 phone={t('contactPage.phonePlaceholder')}
                 email={t('contactPage.emailPlaceholder')}
-              />
+              /> */}
               <OfficeCard
                 title={t('contactPage.ksaOffice')}
                 address={t('contactPage.addressPlaceholder')}
-                phone={t('contactPage.phonePlaceholder')}
+                phone={t('contactPage.phonePlaceholder2')}
                 email={t('contactPage.emailPlaceholder')}
               />
             </div>
@@ -185,16 +186,8 @@ export default function Contact() {
       </section>
 
       {/* Map placeholder */}
-      <section className="pb-20">
-        <Container>
-          <div className="flex h-72 items-center justify-center rounded-2xl bg-neutral-100 text-neutral-400 md:h-96">
-            <div className="text-center">
-              <PinIcon />
-              <p className="mt-2 text-sm">{t('contactPage.mapCaption')}</p>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <LocationMap />
+
     </>
   );
 }

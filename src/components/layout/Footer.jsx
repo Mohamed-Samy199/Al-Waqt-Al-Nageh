@@ -37,7 +37,7 @@ export default function Footer() {
       ];
 
   return (
-    <footer className="relative overflow-hidden bg-[#010C4F] text-white">
+    <footer className="relative overflow-hidden bg-primary-900 text-white">
       {/* Architectural Background */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
         <div className="absolute -right-20 top-20 h-[600px] w-[600px] rounded-full border border-white/30" />

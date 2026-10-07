@@ -83,8 +83,9 @@ export default function ProjectDetail() {
   const prev = () => setLightboxIndex((i) => (i - 1 + images.length) % images.length);
   const next = () => setLightboxIndex((i) => (i + 1) % images.length);
 
-  // Contract value intentionally left out of the public-facing facts.
   const facts = [
+    project.contractValue && { label: t('projectsPage.contractValue'), value: project.contractValue },
+    project.year && { label: t('projectsPage.constructionPeriod'), value: project.year },
     project.duration && { label: t('projectsPage.duration'), value: project.duration },
     { label: t('projectsPage.category'), value: t(`categories.${project.category}`) },
     { label: t('projectsPage.location'), value: project.location },
@@ -118,6 +119,20 @@ export default function ProjectDetail() {
           <div>
             <h2 className="text-2xl font-bold text-primary-900">{t('projectsPage.overview')}</h2>
             <p className="mt-4 text-lg leading-relaxed text-neutral-500">{project.description}</p>
+
+            {project.keyFeatures?.length > 0 && (
+              <div className="mt-8 rounded-2xl bg-primary-50/60 p-6">
+                <h3 className="text-lg font-bold text-primary-900">{t('projectsPage.keyFeatures')}</h3>
+                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {project.keyFeatures.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3 text-sm leading-relaxed text-neutral-700">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Gallery: click any image to open it full-size with prev/next */}
             {images.length > 1 && (
