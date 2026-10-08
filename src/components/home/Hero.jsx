@@ -16,7 +16,7 @@ const slides = [
     },
     en: {
       eyebrow: "AL NAGEH CONSTRUCTION & BUILDINGS",
-      title: "Al-Najeh... Building with time, succeeding with quality.",
+      title: "Al-Nageh... Building with time, succeeding with quality.",
       description:
         "More than 40 years of experience delivering landmark construction projects across Kuwait and Saudi Arabia.",
     },
