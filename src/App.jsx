@@ -7,6 +7,8 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/Projectdetail';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+import ScrollToTop from './components/shared/ScrollToTop';
+import Careers from './pages/Careers';
 
 export default function App() {
   return (
@@ -19,9 +21,11 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <ScrollToTop />
       <Footer />
     </BrowserRouter>
   );

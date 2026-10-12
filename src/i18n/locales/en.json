@@ -4,7 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "contact": "Contact",
-    "services": "Services"
+    "services": "Services",
+    "careers": "Careers"
   },
   "hero": {
     "tagline": "Al Waqt Al Nageh Contracting & Construction",
@@ -70,10 +71,22 @@
     "title": "Experience you can see at every stage of delivery.",
     "subtitle": "From formwork and reinforcement to concrete placing and specialist structural works, our teams bring real field experience to every project.",
     "items": {
-      "formwork": { "title": "Formwork & Scaffolding", "text": "Execution of formwork, scaffolding, and shoring systems with discipline and safety." },
-      "reinforcement": { "title": "Rebar & Steel Fixing", "text": "Preparation and fixing of reinforcement cages and dense rebar mats for foundations and walls." },
-      "concrete": { "title": "Concrete Works", "text": "Concrete, slab, and foundation works with controlled placing and curing." },
-      "special": { "title": "Specialist Structural Works", "text": "Field experience in circular columns, concrete walls, and complex structural details." }
+      "formwork": {
+        "title": "Formwork & Scaffolding",
+        "text": "Execution of formwork, scaffolding, and shoring systems with discipline and safety."
+      },
+      "reinforcement": {
+        "title": "Rebar & Steel Fixing",
+        "text": "Preparation and fixing of reinforcement cages and dense rebar mats for foundations and walls."
+      },
+      "concrete": {
+        "title": "Concrete Works",
+        "text": "Concrete, slab, and foundation works with controlled placing and curing."
+      },
+      "special": {
+        "title": "Specialist Structural Works",
+        "text": "Field experience in circular columns, concrete walls, and complex structural details."
+      }
     }
   },
   "methodology": {
@@ -81,10 +94,22 @@
     "title": "Four stages that keep the project under control.",
     "subtitle": "We turn scope into a clear plan, defined responsibilities, and trackable dates from study through handover.",
     "stages": {
-      "study": { "title": "Study & Pricing", "text": "Review of drawings, specifications, quantities, and site conditions before a buildable offer is submitted." },
-      "planning": { "title": "Planning & Mobilisation", "text": "A detailed programme, labour and plant plan, and an organised site setup." },
-      "execution": { "title": "Execution & Control", "text": "Phased delivery by specialised crews with daily progress and conformity checks." },
-      "handover": { "title": "Quality & Handover", "text": "Testing, inspection, snag clearance, and a documented, organised handover." }
+      "study": {
+        "title": "Study & Pricing",
+        "text": "Review of drawings, specifications, quantities, and site conditions before a buildable offer is submitted."
+      },
+      "planning": {
+        "title": "Planning & Mobilisation",
+        "text": "A detailed programme, labour and plant plan, and an organised site setup."
+      },
+      "execution": {
+        "title": "Execution & Control",
+        "text": "Phased delivery by specialised crews with daily progress and conformity checks."
+      },
+      "handover": {
+        "title": "Quality & Handover",
+        "text": "Testing, inspection, snag clearance, and a documented, organised handover."
+      }
     }
   },
   "whyUs": {
@@ -92,10 +117,22 @@
     "title": "A delivery partner you can rely on.",
     "subtitle": "We combine field experience, disciplined planning, and flexible contracting scope to give clients a clear result.",
     "items": {
-      "experience": { "title": "Tier-One Project Experience", "text": "A record across towers, government, commercial, healthcare, and special construction projects." },
-      "markets": { "title": "Regional Experience", "text": "Experience and operational readiness across the markets where the company works." },
-      "workforce": { "title": "Trained Field Workforce", "text": "Technical crews with practical experience in formwork, rebar, concrete, and structural works." },
-      "flexibility": { "title": "Flexible Contract Scope", "text": "Working as a main contractor, specialist subcontractor, or defined-scope package partner." }
+      "experience": {
+        "title": "Tier-One Project Experience",
+        "text": "A record across towers, government, commercial, healthcare, and special construction projects."
+      },
+      "markets": {
+        "title": "Regional Experience",
+        "text": "Experience and operational readiness across the markets where the company works."
+      },
+      "workforce": {
+        "title": "Trained Field Workforce",
+        "text": "Technical crews with practical experience in formwork, rebar, concrete, and structural works."
+      },
+      "flexibility": {
+        "title": "Flexible Contract Scope",
+        "text": "Working as a main contractor, specialist subcontractor, or defined-scope package partner."
+      }
     }
   },
   "khobar": {
@@ -236,6 +273,80 @@
       "project": "New Project",
       "career": "Careers",
       "other": "Other"
+    }
+  },
+  "careers": {
+    "eyebrow": "Careers",
+    "title": "Build your career with Al Waqt Al Nageh.",
+    "subtitle": "We are a contracting firm specialised in construction and finishing works, operating through two branches — Kuwait and the Kingdom of Saudi Arabia. If you are a skilled tradesperson or an engineer, we would like to hear from you.",
+    "ctaPositions": "View open positions",
+    "ctaApply": "Apply now",
+    "branches": {
+      "Kuwait": "Kuwait",
+      "saudi": "Saudi Arabia",
+      "any": "Either branch"
+    },
+    "why": {
+      "eyebrow": "WHY JOIN US",
+      "title": "Work on projects that shape the skyline.",
+      "items": {
+        "landmark": {
+          "title": "Landmark projects",
+          "text": "Join crews that have executed works on towers above 300 metres, large retail developments, hospitals and government facilities."
+        },
+        "crews": {
+          "title": "Specialised crews",
+          "text": "Formwork carpenters, steel fixers and concrete crews with field experience on high-rise projects and mass pours."
+        },
+        "safety": {
+          "title": "Safety first",
+          "text": "A safe environment for crews and site, applying safety requirements across formwork, scaffolding and lifting."
+        },
+        "branches": {
+          "title": "Two branches",
+          "text": "We operate through two branches, Kuwait and the Kingdom of Saudi Arabia, so skilled people can work wherever the project is."
+        }
+      }
+    },
+    "positions": {
+      "eyebrow": "OPEN POSITIONS",
+      "title": "Find the role that fits you.",
+      "subtitle": "Choose a role to apply for it directly, or send us a general application and we will keep your details for upcoming projects.",
+      "apply": "Apply for this role",
+      "generalTitle": "Don't see your role?",
+      "generalText": "Send us a general application with your trade and experience, and we will get back to you when a suitable project starts.",
+      "generalCta": "Send a general application"
+    },
+    "apply": {
+      "eyebrow": "APPLY",
+      "title": "Send us your application.",
+      "subtitle": "Fill in the form and attach your CV. You can also call the branch closest to you.",
+      "callTitle": "Prefer to talk?",
+      "callText": "Call the branch directly and tell us about your experience.",
+      "form": {
+        "name": "Full name",
+        "phone": "Phone number",
+        "email": "Email ",
+        "position": "Position",
+        "general": "General application",
+        "branch": "Preferred branch",
+        "experience": "Years of experience",
+        "message": "Tell us about your experience",
+        "cv": "CV ",
+        "cvChoose": "Choose a file",
+        "cvHint": "PDF or Word, up to 5 MB",
+        "submit": "Submit application",
+        "sending": "Sending..."
+      },
+      "errors": {
+        "required": "This field is required.",
+        "phone": "Please enter a valid phone number.",
+        "cvType": "Please upload a PDF or Word file.",
+        "cvSize": "The file is larger than 5 MB."
+      },
+      "successTitle": "Application received",
+      "successText": "Thank you for your interest in Al Waqt Al Nageh. We will review your details and contact you if there is a suitable opening.",
+      "another": "Send another application"
     }
   },
   "servicesPage": {

@@ -13,13 +13,13 @@ const slides = [
       eyebrow: "الواقت الناجح للمقاولات والإنشاءات",
       title: "بالجودة نبني، وبالوقت ننجح.",
       description:
-        "شركة مقاولات وإنشاءات بخبرة تمتد لأكثر من 40 عامًا في تنفيذ المشاريع الكبرى في الكويت والمملكة العربية السعودية، مع التزام راسخ بالجودة والسلامة ودقة التنفيذ.",
+        "شركة مقاولات وإنشاءات بخبرة تمتد لأكثر من 40 عامًا في تنفيذ المشاريع الكبرى في الكويت والمملكة العربية السعودية.",
     },
     en: {
       eyebrow: "AL WAQT AL NAGEH CONTRACTING & CONSTRUCTION",
       title: "Building with Quality. Delivering on Time.",
       description:
-        "A construction and contracting company with more than 40 years of experience delivering major projects across Kuwait and Saudi Arabia with discipline, safety, and quality at every stage.",
+        "A construction and contracting company with more than 40 years of experience delivering major projects across Kuwait and Saudi Arabia with discipline.",
     },
   },
   {
@@ -193,7 +193,7 @@ export default function Hero() {
           <span className="mb-5 block font-heading text-xs font-bold tracking-[0.18em] text-accent-bright">
             {copy.eyebrow}
           </span>
-          <h1 className={`m-0 max-w-[720px] text-[clamp(42px,11vw,64px)] font-extrabold leading-[1.02] tracking-[-0.04em] md:text-[clamp(48px,5vw,82px)] ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
+          <h1 className={`m-0 max-w-[720px] text-[clamp(34px,9vw,52px)] font-extrabold leading-[1.05] tracking-[-0.04em] md:text-[clamp(40px,4.2vw,68px)] ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
             {copy.title}
           </h1>
           <p className="mt-[17px] max-w-[500px] font-arBody text-base leading-[1.9] text-white/80 md:mt-6 md:text-xl">

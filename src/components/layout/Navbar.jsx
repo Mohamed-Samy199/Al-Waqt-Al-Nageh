@@ -33,6 +33,7 @@ export default function Navbar() {
     { to: '/about', label: t('nav.about') },
     { to: '/projects', label: t('nav.projects') },
     { to: '/services', label: t('nav.services') },
+    { to: '/careers', label: t('nav.careers') },
     { to: '/contact', label: t('nav.contact') },
   ];
 

@@ -98,7 +98,7 @@ export default function ProjectDetail() {
       {/* Hero image */}
       <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-primary-900">
         <img src={project.image} alt="" className="h-full w-full object-cover opacity-70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
 
         <Container className="absolute inset-x-0 bottom-10 text-white">
           <div className="flex items-center gap-2 text-sm text-white/60">

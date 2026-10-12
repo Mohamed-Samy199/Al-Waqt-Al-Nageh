@@ -90,12 +90,6 @@ export default function ServiceIntro() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-10 bg-accent" />
-              <span className="text-xs font-bold uppercase tracking-[0.28em] text-primary-700 rtl:normal-case rtl:tracking-normal">
-                {t('servicesPage.introEyebrow')}
-              </span>
-            </div>
             <h2 className="max-w-xl text-3xl font-extrabold leading-tight text-primary-900 md:text-5xl">
               {t('servicesPage.introTitle')}
             </h2>
