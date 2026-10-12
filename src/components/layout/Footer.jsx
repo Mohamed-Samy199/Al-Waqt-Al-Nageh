@@ -12,6 +12,7 @@ export default function Footer() {
         { label: "من نحن", href: "/about" },
         { label: "مشاريعنا", href: "/projects" },
         { label: "خدماتنا", href: "/services" },
+        { label: "وظائف", href: "/careers" },
         { label: "تواصل معنا", href: "/contact" },
       ]
     : [
@@ -19,6 +20,7 @@ export default function Footer() {
         { label: "About Us", href: "/about" },
         { label: "Projects", href: "/projects" },
         { label: "Services", href: "/services" },
+        { label: "Careers", href: "/careers" },
         { label: "Contact", href: "/contact" },
       ];
 
@@ -167,7 +169,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="tel:+96500000000"
+                href="tel:+966532357899"
                 className="group flex items-center gap-4"
               >
                 <Phone
@@ -180,12 +182,12 @@ export default function Footer() {
                   className="text-sm text-white/60 transition-colors group-hover:text-white"
                   dir="ltr"
                 >
-                  +965 0000 0000
+                  +966 53 235 7899
                 </span>
               </a>
 
               <a
-                href="mailto:info@example.com"
+                href="mailto:info@n-alnageh.com"
                 className="group flex items-center gap-4"
               >
                 <Mail
@@ -195,7 +197,7 @@ export default function Footer() {
                 />
 
                 <span className="text-sm text-white/60 transition-colors group-hover:text-white">
-                  info@example.com
+                  info@n-alnageh.com
                 </span>
               </a>
             </div>
