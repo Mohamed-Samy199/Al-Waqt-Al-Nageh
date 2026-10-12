@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { projectHome } from '../../data/projects';
 
-const VISIBLE_COUNT = 4;
+const DESKTOP_VISIBLE_COUNT = 3;
+const TABLET_VISIBLE_COUNT = 2;
 const AUTO_PLAY_DELAY = 2000;
 const SKEW_DEG = 5;
 
@@ -76,37 +77,53 @@ export default function FeaturedProjects() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.toLowerCase().startsWith('ar');
   const skew = isArabic ? SKEW_DEG : -SKEW_DEG;
+  const [visibleCount, setVisibleCount] = useState(DESKTOP_VISIBLE_COUNT);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 639px)');
+    const tabletQuery = window.matchMedia('(max-width: 1023px)');
+    const updateViewport = () => {
+      setVisibleCount(mobileQuery.matches ? 1 : tabletQuery.matches ? TABLET_VISIBLE_COUNT : DESKTOP_VISIBLE_COUNT);
+    };
+    updateViewport();
+    mobileQuery.addEventListener('change', updateViewport);
+    tabletQuery.addEventListener('change', updateViewport);
+    return () => {
+      mobileQuery.removeEventListener('change', updateViewport);
+      tabletQuery.removeEventListener('change', updateViewport);
+    };
+  }, []);
 
   // Only the 5 flagship projects (flagged `featured: true` in projects.js)
   // appear in this carousel -- the full 15-project catalog lives on /projects.
   const featuredProjects = useMemo(() => projectHome.filter((p) => p.featured), []);
 
   const carouselProjects = useMemo(() => {
-    if (featuredProjects.length <= VISIBLE_COUNT) return featuredProjects;
-    return [...featuredProjects, ...featuredProjects.slice(0, VISIBLE_COUNT)];
-  }, [featuredProjects]);
+    if (featuredProjects.length <= visibleCount) return featuredProjects;
+    return [...featuredProjects, ...featuredProjects.slice(0, visibleCount)];
+  }, [featuredProjects, visibleCount]);
 
   const total = featuredProjects.length;
-  const maxIndex = Math.max(total - VISIBLE_COUNT, 0);
+  const maxIndex = Math.max(total - visibleCount, 0);
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
   const goNext = () => {
-    if (total <= VISIBLE_COUNT) return;
+    if (total <= visibleCount) return;
     setIndex((current) => current + 1);
   };
 
   const goPrev = () => {
-    if (total <= VISIBLE_COUNT) return;
+    if (total <= visibleCount) return;
     setIndex((current) => (current <= 0 ? maxIndex : current - 1));
   };
 
   useEffect(() => {
-    if (isPaused || total <= VISIBLE_COUNT) return;
+    if (isPaused || total <= visibleCount) return;
     const timer = setInterval(goNext, AUTO_PLAY_DELAY);
     return () => clearInterval(timer);
-  }, [isPaused, total]);
+  }, [isPaused, total, visibleCount]);
 
   useEffect(() => {
     if (index !== total) return;
@@ -132,16 +149,9 @@ export default function FeaturedProjects() {
         <path d="M0 160h260" stroke="currentColor" />
       </svg>
 
-      <div className="relative z-10 flex w-full flex-col gap-10 lg:flex-row lg:items-center">
-        <div className="shrink-0 px-6 sm:px-10 lg:w-[290px] lg:px-0 lg:ps-8 xl:w-[340px] xl:ps-12">
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-8 bg-white" />
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-white/70 rtl:normal-case rtl:tracking-normal">
-              {t('featured.eyebrow')}
-            </span>
-          </div>
-
-          <h2 className="text-3xl font-extrabold leading-[1.2] md:text-4xl xl:text-5xl">{t('featured.headingLine1')}</h2>
+      <div className="relative z-10 mx-auto flex w-full flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-10 lg:px-8">
+        <div className="shrink-0 lg:w-[290px] xl:w-[340px]">
+          <h2 className="text-4xl font-extrabold leading-[1.08] md:text-5xl xl:text-6xl">{t('featured.headingLine1')}</h2>
 
           <span className="mt-5 block h-[3px] w-10 bg-white" />
 
@@ -157,7 +167,7 @@ export default function FeaturedProjects() {
             </span>
           </Link>
 
-          {total > VISIBLE_COUNT && (
+          {total > visibleCount && (
             <div className="mt-7 flex items-center gap-3">
               <button
                 type="button"
@@ -186,11 +196,11 @@ export default function FeaturedProjects() {
           )}
         </div>
 
-        <div className="min-w-0 flex-1 overflow-hidden p-3">
+        <div className="min-w-0 flex-1 overflow-hidden px-1 py-2 sm:p-3">
           <div
             className={`flex h-[360px] sm:h-[400px] lg:h-[440px] xl:h-[460px] ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
             style={{
-              width: `${(carouselProjects.length / VISIBLE_COUNT) * 100}%`,
+              width: `${(carouselProjects.length / visibleCount) * 100}%`,
               transform: `translateX(${(isArabic ? index : -index) * (100 / carouselProjects.length)}%)`,
             }}
           >

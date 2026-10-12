@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const SLIDE_DURATION = 5000;
 
@@ -9,16 +10,16 @@ const slides = [
     type: "image",
     src: "/images/hero/hero-editorial.png",
     ar: {
-      eyebrow: "الوقت الناجح للإنشاءات والمباني",
-      title: "الناجح... بالوقت نبني و بالجودة ننجح",
+      eyebrow: "الواقت الناجح للمقاولات والإنشاءات",
+      title: "بالجودة نبني، وبالوقت ننجح.",
       description:
-        "خبرة تمتد لأكثر من 40 عامًا في تنفيذ المشاريع الإنشائية الكبرى في الكويت والمملكة العربية السعودية.",
+        "شركة مقاولات وإنشاءات بخبرة تمتد لأكثر من 40 عامًا في تنفيذ المشاريع الكبرى في الكويت والمملكة العربية السعودية، مع التزام راسخ بالجودة والسلامة ودقة التنفيذ.",
     },
     en: {
-      eyebrow: "AL NAGEH CONSTRUCTION & BUILDINGS",
-      title: "Al-Nageh... Building with time, succeeding with quality.",
+      eyebrow: "AL WAQT AL NAGEH CONTRACTING & CONSTRUCTION",
+      title: "Building with Quality. Delivering on Time.",
       description:
-        "More than 40 years of experience delivering landmark construction projects across Kuwait and Saudi Arabia.",
+        "A construction and contracting company with more than 40 years of experience delivering major projects across Kuwait and Saudi Arabia with discipline, safety, and quality at every stage.",
     },
   },
   {
@@ -27,16 +28,16 @@ const slides = [
     src: "/images/hero/hero-daylight.mp4",
     poster: "/images/hero/hero-daylight.png",
     ar: {
-      eyebrow: "تميّز هندسي",
-      title: "مساحات تليق بالمستقبل",
+      eyebrow: "تنفيذ وإنشاءات",
+      title: "تنفيذ يُبنى عليه.",
       description:
-        "نحوّل الرؤية المعمارية إلى مشاريع متكاملة تجمع بين الجودة والدقة والاستدامة.",
+        "ننفذ الأعمال الإنشائية وفق المواصفات المعتمدة والبرامج الزمنية، من الأعمال المدنية والهيكلية حتى التشطيبات والتسليم.",
     },
     en: {
-      eyebrow: "ENGINEERING EXCELLENCE",
-      title: "Spaces designed for what comes next.",
+      eyebrow: "CONSTRUCTION DELIVERY",
+      title: "Execution You Can Build On.",
       description:
-        "We turn architectural vision into integrated projects shaped by quality, precision, and lasting value.",
+        "We deliver construction works to approved specifications and schedules, from civil and structural works through finishing and handover.",
     },
   },
   {
@@ -45,16 +46,16 @@ const slides = [
     src: "/images/hero/hero-composite.mp4",
     poster: "/images/hero/hero-composite.png",
     ar: {
-      eyebrow: "إرث من المعالم",
-      title: "من الكويت إلى السعودية",
+      eyebrow: "سجل مشاريع موثق",
+      title: "خبرة مثبتة في مشاريع كبرى.",
       description:
-        "مشاريع بارزة صنعت حضورًا حقيقيًا في الأبراج، المؤسسات، الواجهات البحرية، والمشروعات التجارية.",
+        "سجل حافل من المشاريع الحكومية والتجارية والصحية والأبراج والمنشآت الخاصة في الكويت والمملكة العربية السعودية.",
     },
     en: {
-      eyebrow: "A LEGACY OF LANDMARKS",
-      title: "From Kuwait to Saudi Arabia.",
+      eyebrow: "A PROVEN PROJECT RECORD",
+      title: "Proven Experience on Major Projects.",
       description:
-        "Landmark work across towers, institutions, waterfronts, commercial destinations, and more.",
+        "A proven record across government, commercial, healthcare, high-rise, airport, and special construction projects.",
     },
   },
 ];
@@ -189,28 +190,28 @@ export default function Hero() {
           key={`${activeSlide.id}-${language}`}
           className={`w-full max-w-[570px] animate-copy-reveal ${isArabic ? "text-right" : "text-left"}`}
         >
-          <span className="mb-[18px] block font-heading text-xs font-semibold tracking-[0.18em] text-accent-bright">
-            {/* {copy.eyebrow} */}
+          <span className="mb-5 block font-heading text-xs font-bold tracking-[0.18em] text-accent-bright">
+            {copy.eyebrow}
           </span>
-          <h1 className="m-0 max-w-[690px] font-arHeading text-[clamp(36px,11vw,54px)] font-extrabold leading-[1.08] tracking-[-0.04em] md:text-[clamp(38px,5vw,76px)] mt-16">
+          <h1 className={`m-0 max-w-[720px] text-[clamp(42px,11vw,64px)] font-extrabold leading-[1.02] tracking-[-0.04em] md:text-[clamp(48px,5vw,82px)] ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
             {copy.title}
           </h1>
           <p className="mt-[17px] max-w-[500px] font-arBody text-base leading-[1.9] text-white/80 md:mt-6 md:text-xl">
             {copy.description}
           </p>
           <div className="mt-[26px] flex flex-wrap gap-3 md:mt-[34px]">
-            <a
+            <Link
               className="inline-flex min-h-[52px] items-center justify-center rounded-sm bg-accent-bright px-[25px] font-arBody font-bold text-primary-900 shadow-[0_8px_30px_rgba(255,205,92,0.2)] transition hover:-translate-y-0.5 hover:bg-accent-glow"
-              href="#projects"
+              to="/projects"
             >
               {isArabic ? "استكشف مشاريعنا" : "Explore our projects"}
-            </a>
-            <a
+            </Link>
+            <Link
               className="inline-flex min-h-[52px] items-center justify-center rounded-sm border border-white/50 bg-white/[0.04] px-[25px] font-arBody font-bold text-white transition hover:-translate-y-0.5 hover:border-accent-bright hover:bg-accent-bright/15"
-              href="#contact"
+              to="/contact"
             >
               {isArabic ? "تواصل معنا" : "Get in touch"}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

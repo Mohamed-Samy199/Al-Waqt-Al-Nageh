@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
-// Navbar sits fixed on top of the page (position: fixed) so it never takes
-// up its own layout space -- the Hero (or any first section) renders full
-// height right underneath it, and the navbar overlays on top.
+// Navbar overlays the section underneath it. It intentionally takes no layout
+// space; the page controls its own top spacing and hero composition.
 //
 // `isScrolled` drives the color scheme:
 //  - false -> "floating over a dark hero" look: transparent bg, white logo/text
@@ -19,61 +18,13 @@ import Container from '../ui/Container';
 // over and is mostly a white page, so there isScrolled is just forced to
 // `true` for the whole page -- otherwise the white-on-white logo/text would
 // be unreadable.
-const NAV_TRIGGER_OFFSET = 100;
-
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const isHome = location.pathname === '/';
 
-  const [isScrolled, setIsScrolled] = useState(!isHome);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    // Non-home pages: always use the solid/dark-text look, no scroll listener needed.
-    if (!isHome) {
-      setIsScrolled(true);
-      return;
-    }
-
-    const updateNavbar = () => {
-      const aboutSection = document.getElementById('about-preview');
-      const featuredSection = document.getElementById('featured-projects');
-
-      if (!aboutSection || !featuredSection) {
-        setIsScrolled(false);
-        return;
-      }
-
-      const aboutTop = aboutSection.getBoundingClientRect().top;
-      const featuredTop = featuredSection.getBoundingClientRect().top;
-
-      // Before About -> first (transparent) state
-      if (aboutTop > NAV_TRIGGER_OFFSET) {
-        setIsScrolled(false);
-        return;
-      }
-
-      // From About up to (not including) Featured Projects -> solid state
-      if (featuredTop > NAV_TRIGGER_OFFSET) {
-        setIsScrolled(true);
-        return;
-      }
-
-      // Entering Featured Projects (dark section again) -> back to transparent
-      setIsScrolled(false);
-    };
-
-    updateNavbar();
-
-    window.addEventListener('scroll', updateNavbar, { passive: true });
-    window.addEventListener('resize', updateNavbar);
-
-    return () => {
-      window.removeEventListener('scroll', updateNavbar);
-      window.removeEventListener('resize', updateNavbar);
-    };
-  }, [isHome]);
+  const isLightPage = !isHome;
 
   const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'en' ? 'ar' : 'en');
 
@@ -81,31 +32,33 @@ export default function Navbar() {
     { to: '/', label: t('nav.home') },
     { to: '/about', label: t('nav.about') },
     { to: '/projects', label: t('nav.projects') },
+    { to: '/services', label: t('nav.services') },
     { to: '/contact', label: t('nav.contact') },
   ];
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        isScrolled ? '' : 'bg-transparent'
-      }`}
+      className="absolute inset-x-0 top-0 z-50 bg-transparent"
     >
       <Container className="flex h-20 items-center justify-between">
         {/* Logo: white version floating over the hero, color version once scrolled / on light pages */}
-        <Link to="/" className="mt-16 flex shrink-0 items-center gap-2">
+        <Link to="/" className="flex shrink-0 items-center gap-2">
           <img
-            src={isScrolled ? '/images/logo/logo.png' : '/images/logo/logo-white.png'}
+            src={isLightPage ? '/images/logo/logo.png' : '/images/logo/logo-white.png'}
             alt="Al Waqt Al Nageh"
-            className="h-24 md:h-36"
+            className="h-16 w-auto object-contain md:h-20"
           />
         </Link>
 
         {/* Center pill nav -- desktop only */}
-        <nav
-          className={`hidden items-center gap-1 rounded-full p-1 transition-colors duration-300 lg:flex ${
-            isScrolled ? 'bg-neutral-100' : 'bg-white/10 ring-1 ring-white/15 backdrop-blur-md'
-          }`}
-        >
+        {/* Center pill nav -- desktop only */}
+<nav
+  className={`hidden items-center gap-1 rounded-full p-1 backdrop-blur-md transition-colors duration-300 lg:flex ${
+    isLightPage
+      ? 'bg-primary-900/5 ring-1 ring-primary-900/10'
+      : 'bg-white/10 ring-1 ring-white/15'
+  }`}
+>
           {links.map((link) => (
             <NavLink
               key={link.to}
@@ -116,7 +69,7 @@ export default function Navbar() {
                   'rounded-full px-5 py-2 text-sm font-medium transition-colors duration-200',
                   isActive
                     ? 'bg-accent-bright text-primary-900'
-                    : isScrolled
+                    : isLightPage
                     ? 'text-neutral-700 hover:text-primary-700'
                     : 'text-white/80 hover:text-white',
                 ].join(' ')
@@ -132,8 +85,8 @@ export default function Navbar() {
           <button
             onClick={toggleLanguage}
             className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-              isScrolled
-                ? 'border-neutral-200 bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+              isLightPage
+                ? 'border-primary-900/20 text-primary-900 hover:bg-primary-900/5'
                 : 'border-white/30 text-white hover:bg-white/10'
             }`}
           >
@@ -152,7 +105,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Menu"
           className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors lg:hidden ${
-            isScrolled ? 'bg-neutral-100 text-primary-900' : 'bg-white/10 text-white'
+            isLightPage ? 'bg-transparent text-primary-900' : 'bg-transparent text-white'
           }`}
         >
           {mobileOpen ? (

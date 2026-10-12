@@ -123,7 +123,7 @@ export default function FeaturesCards() {
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-neutral-50 py-28">
       <Container className="relative z-10">
-        <SectionHeading eyebrow={t('aboutPage.valuesEyebrow')} title={t('aboutPage.valuesTitle')} />
+        <SectionHeading title={t('aboutPage.valuesTitle')} />
 
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
           {VALUE_KEYS.map(({ key, Icon, image }, index) => (

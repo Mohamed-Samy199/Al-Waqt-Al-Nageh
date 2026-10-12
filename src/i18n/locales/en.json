@@ -3,12 +3,13 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "services": "Services"
   },
   "hero": {
-    "tagline": "Construction & Buildings",
-    "title": "Building Kuwait's Landmarks for Nearly 40 Years",
-    "subtitle": "From government headquarters to iconic towers, hospitals, and coastal developments — Al Waqt Al Nageh delivers construction excellence across Kuwait and Saudi Arabia.",
+    "tagline": "Al Waqt Al Nageh Contracting & Construction",
+    "title": "Building with Quality. Delivering on Time.",
+    "subtitle": "A construction and contracting company with more than 40 years of experience delivering major projects across Kuwait and Saudi Arabia with discipline, safety, and quality at every stage.",
     "cta_projects": "View Our Projects",
     "cta_contact": "Contact Us"
   },
@@ -21,16 +22,16 @@
   "about": {
     "eyebrow": "About Us",
     "title": "About Al Waqt Al Nageh",
-    "heading": "We build more than buildings. We build trust and commitment.",
-    "text": "Al Waqt Al Nageh is an established construction company with nearly four decades of experience in construction and building, having contributed to governmental, commercial, healthcare, hospitality, and high-rise projects across Kuwait and Saudi Arabia.",
-    "cta": "Learn More",
+    "heading": "Execution experience. Schedule discipline. Lasting quality.",
+    "text": "Al Waqt Al Nageh is a Kuwait-based contracting and construction company with more than 40 years of experience delivering government, commercial, healthcare, high-rise, and special construction projects to approved standards and schedules.",
+    "cta": "Meet the company",
     "pillars": {
       "quality": {
         "title": "Quality",
         "text": "We uphold the highest quality standards at every stage of the project."
       },
       "experience": {
-        "title": "Experience",
+        "title": "Execution Experience",
         "text": "More than 40 years of experience in construction and building."
       },
       "commitment": {
@@ -40,17 +41,17 @@
     }
   },
   "categories": {
-    "title": "What We Build",
+    "title": "Construction Sectors",
     "governmental": "Governmental",
     "towers": "Towers",
     "commercial": "Commercial & Hotels",
     "health": "Health Institutions",
-    "coastal": "Coastal Development",
+    "coastal": "Waterfront & Coastal Works",
     "airports": "Airports",
     "eyebrow": "Our Categories",
-    "headingLead": "Our Fields of",
-    "headingAccent": "Expertise",
-    "subtitle": "We deliver diverse projects across vital sectors, meeting the needs of every client in every field.",
+    "headingLead": "Our Expertise",
+    "headingAccent": "in Construction",
+    "subtitle": "We deliver major projects across vital sectors, from civil and structural works through finishing and handover.",
     "cta": "Explore all projects",
     "tagline": "Building a better tomorrow",
     "projectsCount_one": "{{count}} Project",
@@ -58,10 +59,44 @@
   },
   "featured": {
     "eyebrow": "Selected Projects",
-    "headingLine1": "Building a Future",
-    "headingLine2": "of Greater Value.",
-    "subtitle": "Integrated design and execution that raises the value of life and delivers lasting worth.",
+    "headingLine1": "Major Projects,",
+    "headingLine2": "Execution You Can Build On.",
+    "subtitle": "A proven record of delivery against quality standards, schedules, and approved specifications.",
     "cta": "Explore all projects"
+  },
+  "execution": {
+    "eyebrow": "Execution Capabilities",
+    "featuredLabel": "From the field",
+    "title": "Experience you can see at every stage of delivery.",
+    "subtitle": "From formwork and reinforcement to concrete placing and specialist structural works, our teams bring real field experience to every project.",
+    "items": {
+      "formwork": { "title": "Formwork & Scaffolding", "text": "Execution of formwork, scaffolding, and shoring systems with discipline and safety." },
+      "reinforcement": { "title": "Rebar & Steel Fixing", "text": "Preparation and fixing of reinforcement cages and dense rebar mats for foundations and walls." },
+      "concrete": { "title": "Concrete Works", "text": "Concrete, slab, and foundation works with controlled placing and curing." },
+      "special": { "title": "Specialist Structural Works", "text": "Field experience in circular columns, concrete walls, and complex structural details." }
+    }
+  },
+  "methodology": {
+    "eyebrow": "How We Work",
+    "title": "Four stages that keep the project under control.",
+    "subtitle": "We turn scope into a clear plan, defined responsibilities, and trackable dates from study through handover.",
+    "stages": {
+      "study": { "title": "Study & Pricing", "text": "Review of drawings, specifications, quantities, and site conditions before a buildable offer is submitted." },
+      "planning": { "title": "Planning & Mobilisation", "text": "A detailed programme, labour and plant plan, and an organised site setup." },
+      "execution": { "title": "Execution & Control", "text": "Phased delivery by specialised crews with daily progress and conformity checks." },
+      "handover": { "title": "Quality & Handover", "text": "Testing, inspection, snag clearance, and a documented, organised handover." }
+    }
+  },
+  "whyUs": {
+    "eyebrow": "Why Al Waqt Al Nageh",
+    "title": "A delivery partner you can rely on.",
+    "subtitle": "We combine field experience, disciplined planning, and flexible contracting scope to give clients a clear result.",
+    "items": {
+      "experience": { "title": "Tier-One Project Experience", "text": "A record across towers, government, commercial, healthcare, and special construction projects." },
+      "markets": { "title": "Regional Experience", "text": "Experience and operational readiness across the markets where the company works." },
+      "workforce": { "title": "Trained Field Workforce", "text": "Technical crews with practical experience in formwork, rebar, concrete, and structural works." },
+      "flexibility": { "title": "Flexible Contract Scope", "text": "Working as a main contractor, specialist subcontractor, or defined-scope package partner." }
+    }
   },
   "khobar": {
     "tag": "Latest Project — Saudi Arabia",
@@ -81,10 +116,10 @@
     "breadcrumbHome": "Home",
     "breadcrumbCurrent": "About Us",
     "heroEyebrow": "About Us",
-    "heroTitle": "Nearly 40 Years of Building Trust",
-    "heroSubtitle": "A Kuwait-based construction company with a growing presence across the region.",
+    "heroTitle": "More Than 40 Years Delivering Major Projects",
+    "heroSubtitle": "A Kuwait-based contracting and construction company with a proven record across Kuwait and Saudi Arabia.",
     "storyEyebrow": "Our Story",
-    "storyTitle": "Building with Confidence, Creating Lasting Impact",
+    "storyTitle": "Delivering with Quality, Commitment, and Precision",
     "storyText1": "For more than 40 years, we have been shaping the way people live, work and connect. With a commitment to excellence and a vision for the future, we continue to build trust, create value, and deliver landmarks that stand the test of time.",
     "storyText2": "We work closely with clients, consultants, and partners to deliver integrated solutions with high quality, precision in execution, and full commitment to schedules and standards.",
     "timeline": {
@@ -153,8 +188,8 @@
   },
   "projectsPage": {
     "breadcrumbCurrent": "Projects",
-    "heroTitle": "Our Projects",
-    "heroSubtitle": "A portfolio of landmark developments across Kuwait and Saudi Arabia.",
+    "heroTitle": "Projects We Are Proud to Deliver",
+    "heroSubtitle": "A proven record across government, commercial, healthcare, high-rise, airport, and special construction projects.",
     "filterAll": "All",
     "viewProject": "View Project",
     "contractValue": "Contract Value",
@@ -201,6 +236,102 @@
       "project": "New Project",
       "career": "Careers",
       "other": "Other"
+    }
+  },
+  "servicesPage": {
+    "breadcrumbCurrent": "Services",
+    "heroEyebrow": "Our Scope of Work",
+    "heroTitle": "Building from groundworks to handover",
+    "heroSubtitle": "Integrated construction solutions that bring together engineering expertise, precise execution, and disciplined project management.",
+    "introEyebrow": "Integrated delivery capabilities",
+    "introTitle": "Your partner for turning plans into lasting places",
+    "introText": "Our expertise extends across more than one project type. We manage and deliver civil, structural, finishing, and electromechanical work packages as one coordinated system, working closely with clients, consultants, and delivery teams.",
+    "scopeEyebrow": "What we deliver",
+    "scopeTitle": "Execution and management services",
+    "scopeText": "A clear scope helps clients and consultants understand our role as an execution partner and integrated contractor.",
+    "items": {
+      "reinforcedConcrete": {
+        "title": "Reinforced Concrete Structures",
+        "text": "Execution of concrete structures for towers and multi-storey buildings, including rafts, columns, shear walls, slabs, and beams."
+      },
+      "formwork": {
+        "title": "Formwork & Scaffolding",
+        "text": "Erection and operation of formwork, scaffolding, and shoring systems for towers and structures with full safety compliance."
+      },
+      "rebar": {
+        "title": "Rebar & Steel Fixing",
+        "text": "Cutting, bending, and fixing reinforcement, pre-assembled cages, and dense mat reinforcement for rafts, walls, and cores."
+      },
+      "massPours": {
+        "title": "Concrete Placing & Mass Pours",
+        "text": "Planning and execution of continuous concrete pours, including heat-of-hydration control and curing."
+      },
+      "excavation": {
+        "title": "Excavation, Shoring & Dewatering",
+        "text": "Deep excavation, shoring, retaining-wall systems, and groundwater dewatering for multi-level basements."
+      },
+      "finishes": {
+        "title": "Finishing Works",
+        "text": "Blockwork, waterproofing and thermal insulation, plastering, painting, flooring, internal finishes, and external works."
+      },
+      "electromechanical": {
+        "title": "Electromechanical Works",
+        "text": "Coordination and delivery of electrical, mechanical, and building service systems through construction and handover."
+      },
+      "projectManagement": {
+        "title": "Project Management & Delivery",
+        "text": "Managing scope, programme, resources, and coordination between delivery teams and consultants through handover."
+      }
+    },
+    "cta": "Discuss your project",
+    "highlights": {
+      "quality": {
+        "title": "Engineering quality",
+        "text": "Precise standards from planning to delivery."
+      },
+      "delivery": {
+        "title": "Supervision & delivery",
+        "text": "Complete oversight across every stage."
+      },
+      "innovation": {
+        "title": "Integrated vision",
+        "text": "Modern solutions for every project type."
+      },
+      "experience": {
+        "title": "Years of experience",
+        "text": "A proven record of successful projects."
+      }
+    },
+    "safety": {
+      "eyebrow": "Our commitments",
+      "title": "Safety & Quality",
+      "subtitle": "No schedule is worth an accident, and no saving is worth a structural defect.",
+      "items": {
+        "siteSafetyPlan": {
+          "title": "Site Safety Plan",
+          "text": "A written plan for every site covering excavation, lifting, and work at height, with a daily briefing before work starts."
+        },
+        "ppe": {
+          "title": "Personal Protective Equipment",
+          "text": "Full provision of and compliance with PPE for all workers, monitored continuously on site."
+        },
+        "formworkInspection": {
+          "title": "Formwork & Scaffold Inspection",
+          "text": "Formwork, scaffolding, and shoring inspected and signed off before every pour — no permit to pour without it."
+        },
+        "testing": {
+          "title": "Material & Concrete Testing",
+          "text": "Slump tests, concrete cubes, and rebar certificates kept in a documented record handed over with the project."
+        },
+        "inspectionSignOff": {
+          "title": "Inspection & Sign-Off",
+          "text": "Joint inspection with the consultant for every item before it is covered, with snags cleared before moving on."
+        },
+        "reporting": {
+          "title": "Periodic Reporting",
+          "text": "A weekly report on progress, executed quantities, and constraints, plus a monthly technical and financial report."
+        }
+      }
     }
   }
 }

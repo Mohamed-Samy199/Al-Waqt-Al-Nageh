@@ -53,24 +53,19 @@ export default function PageHero({
             </nav>
           )}
 
-          {/* العنوان التمهيدي (Eyebrow) */}
-          {eyebrow && (
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-8 bg-primary-900" />
-              <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-900 rtl:normal-case rtl:tracking-normal">
-                {eyebrow}
-              </span>
-            </div>
-          )}
-
           {/* العنوان الرئيسي */}
-          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-primary-900 md:text-5xl font-heading">
+          {eyebrow && (
+            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal">
+              {eyebrow}
+            </span>
+          )}
+          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-primary-900 md:text-7xl font-heading">
             {title}
           </h1>
 
           {/* الوصف */}
           {subtitle && (
-            <p className="mt-5 text-neutral-500 font-body text-base md:text-lg leading-relaxed font-light">
+            <p className="mt-6 max-w-xl text-neutral-500 font-body text-base md:text-xl leading-relaxed">
               {subtitle}
             </p>
           )}

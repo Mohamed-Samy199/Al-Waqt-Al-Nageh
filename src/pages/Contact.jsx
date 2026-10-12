@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import Container from '../components/ui/Container';
 import PageHero from '../components/shared/PageHero';
 import LocationMap from '../components/contact/LocationMap';
@@ -98,10 +97,7 @@ export default function Contact() {
         <Container className="grid gap-12 lg:grid-cols-[380px_1fr]">
           {/* Offices */}
           <div>
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-primary-700" />
-              <span className="text-sm font-semibold tracking-wide text-primary-700">{t('contactPage.officesEyebrow')}</span>
-            </div>
+            <h2 className="mb-6 text-4xl font-extrabold leading-tight text-primary-900 md:text-5xl">{t('contactPage.officesEyebrow')}</h2>
             <div className="space-y-6">
               {/* <OfficeCard
                 title={t('contactPage.kuwaitOffice')}
