@@ -24,9 +24,9 @@ export default function ExecutionCapabilities() {
       <Container className="relative z-10">
         {/* العناوين العلوية */}
         <div className="mb-14 max-w-3xl">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal">
+          {/* <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal">
             {t('execution.eyebrow')}
-          </span>
+          </span> */}
           <h2 className={`text-4xl font-extrabold leading-[1.08] text-primary-900 md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
             {t('execution.title')}
           </h2>

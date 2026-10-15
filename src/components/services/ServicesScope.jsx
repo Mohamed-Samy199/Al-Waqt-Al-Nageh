@@ -29,7 +29,7 @@ export default function ServicesScope() {
       <Container>
         <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="mb-3 text-sm font-bold text-accent">{t('servicesPage.scopeEyebrow')}</p>
+            <p className="mb-3 text-xl font-bold text-accent">{t('servicesPage.scopeEyebrow')}</p>
             <h2 className="text-3xl font-extrabold text-primary-900 md:text-4xl">{t('servicesPage.scopeTitle')}</h2>
           </div>
           <p className="max-w-md text-sm leading-7 text-neutral-500">{t('servicesPage.scopeText')}</p>

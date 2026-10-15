@@ -66,11 +66,11 @@ export default function Footer() {
 
                 <div>
                   <div className="text-lg font-semibold tracking-wide">
-                    EL WAQT AL NAGEH
+                    AL NAGEH
                   </div>
 
                   <div className="mt-1 text-[9px] uppercase tracking-[0.35em] text-white/45">
-                    Engineering & Construction
+                    Construction & Buildings
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Footer() {
             </p>
 
             {/* Social */}
-            <div className="mt-8 flex items-center gap-3">
+            {/* <div className="mt-8 flex items-center gap-3">
               {["LinkedIn", "Instagram", "Facebook"].map((social) => (
                 <a
                   key={social}
@@ -93,7 +93,7 @@ export default function Footer() {
                   {social}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Navigation */}
@@ -214,19 +214,7 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-6">
-            <Link
-              to="/privacy"
-              className="text-[10px] uppercase tracking-[0.12em] text-white/35 transition-colors hover:text-white"
-            >
-              {isArabic ? "الخصوصية" : "Privacy"}
-            </Link>
-
-            <Link
-              to="/terms"
-              className="text-[10px] uppercase tracking-[0.12em] text-white/35 transition-colors hover:text-white"
-            >
-              {isArabic ? "الشروط" : "Terms"}
-            </Link>
+          
 
             <button
               type="button"

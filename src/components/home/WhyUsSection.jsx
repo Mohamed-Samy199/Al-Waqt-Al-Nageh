@@ -20,7 +20,7 @@ export default function WhyUsSection() {
         {/* Poster: shows while the video loads or if it fails */}
         <img
           src={POSTER_SRC}
-          alt=""
+          alt="Al Waqt Al Nageh"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -50,8 +50,8 @@ export default function WhyUsSection() {
         {/* Heading side */}
         <div className={isArabic ? 'text-right' : 'text-left'}>
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-white" />
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white rtl:normal-case rtl:tracking-normal">
+            {/* <span className="h-px w-8 bg-white" /> */}
+            <span className="text-xs md:text-xl font-semibold uppercase tracking-[0.3em] text-white rtl:normal-case rtl:tracking-normal">
               {t('whyUs.eyebrow')}
             </span>
           </div>

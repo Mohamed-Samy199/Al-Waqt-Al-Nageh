@@ -47,7 +47,7 @@ export default function Navbar() {
           <img
             src={isLightPage ? '/images/logo/logo.png' : '/images/logo/logo-white.png'}
             alt="Al Waqt Al Nageh"
-            className="h-16 w-auto object-contain md:h-20"
+            className="h-20 w-auto object-contain md:h-20"
           />
         </Link>
 

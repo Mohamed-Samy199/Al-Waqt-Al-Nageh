@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
       <div className="relative h-56 overflow-hidden">
         <img
           src={project.image}
-          alt=""
+          alt="Al Waqt Al Nageh"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <span className="absolute start-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary-900">

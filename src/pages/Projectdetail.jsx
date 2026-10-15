@@ -47,7 +47,7 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
 
       <img
         src={images[index]}
-        alt=""
+        alt="Al Waqt Al Nageh"
         onClick={(e) => e.stopPropagation()}
         className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
       />
@@ -96,12 +96,19 @@ export default function ProjectDetail() {
   return (
     <>
       {/* Hero image */}
-      <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-primary-900">
-        <img src={project.image} alt={`${project.name} construction project in ${project.location}`} className="h-full w-full object-cover opacity-70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/40 to-transparent" />
+      <section className="relative h-[55vh] min-h-[380px] overflow-hidden bg-neutral-100">
+        <img
+          src={project.image}
+          alt={`${project.name} construction project in ${project.location}`}
+          className="h-full w-full object-cover"
+        />
+        {/* White fade: starts solid at the top and dissolves downward */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/30 to-transparent" />
+        {/* Soft dark fade at the bottom to keep the white title readable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
         <Container className="absolute inset-x-0 bottom-10 text-white">
-          <div className="flex items-center gap-2 text-sm text-white/60">
+          <div className="flex items-center gap-2 text-sm text-white/70">
             <Link to="/" className="hover:text-white">{t('nav.home')}</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-white">{t('projectsPage.breadcrumbCurrent')}</Link>
@@ -109,7 +116,7 @@ export default function ProjectDetail() {
             <span className="text-white">{project.name}</span>
           </div>
           <h1 className="mt-3 max-w-2xl text-3xl font-extrabold md:text-4xl">{project.name}</h1>
-          <p className="mt-2 text-white/70">{project.location}</p>
+          <p className="mt-2 text-white/80">{project.location}</p>
         </Container>
       </section>
 

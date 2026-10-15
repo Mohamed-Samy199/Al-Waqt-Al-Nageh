@@ -147,7 +147,7 @@ export default function Hero() {
                 <img
                   className={mediaClass}
                   src={slide.src}
-                  alt=""
+                  alt="Al Waqt Al Nageh"
                   aria-hidden="true"
                 />
               )}

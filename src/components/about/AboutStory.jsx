@@ -35,13 +35,19 @@ export default function StoryHero() {
     ? 'polygon(100% 0, 12% 0, 0 13%, 0 87%, 12% 100%, 100% 100%)'
     : 'polygon(0 0, 88% 0, 100% 13%, 100% 87%, 88% 100%, 0 100%)';
 
+  // Mobile image: fixed-pixel chamfers (so the cut stays a clean 45deg
+  // whatever the image height is) on two opposite corners, mirrored for rtl.
+  const mobileImageClipPath = isArabic
+    ? 'polygon(28px 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%, 0 28px)'
+    : 'polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px))';
+
   return (
     <section className="relative overflow-hidden bg-neutral-50">
       <div className="mx-auto max-w-[1536px] px-6 lg:px-10">
         {/* Story area */}
-        <div className="relative min-h-[600px] lg:min-h-[620px]">
+        <div className="relative lg:min-h-[620px]">
           {/*
-            Background illustration: bleeds from the viewport's outer edge
+            Background illustration (desktop): bleeds from the viewport's outer edge
             up to where the card begins. `insetInlineStart`/`insetInlineEnd`
             (not left/right) so this flips sides automatically for Arabic,
             same trick used for the About section's image bleed.
@@ -65,21 +71,38 @@ export default function StoryHero() {
             />
           </div>
 
-          {/* Mobile image */}
-          <div className="relative mb-8 block h-[420px] overflow-hidden lg:hidden">
-            <img src="/images/about/story-bg.png" alt={t('aboutPage.storyImageAlt')} className="h-full w-full animate-gentle-zoom object-cover" />
+          {/* Mobile image: shown in full (natural aspect ratio, no cropping),
+              with chamfered corners + an offset gold frame to echo the
+              desktop design. */}
+          <div className="relative block pb-3 pe-3 lg:hidden">
+            {/* offset gold frame peeking out behind the image */}
+            {/* <div
+              className="pointer-events-none absolute bottom-0 end-0 start-3 top-3 border border-accent/60"
+              aria-hidden="true"
+            /> */}
+            <div
+              className="relative overflow-hidden bg-neutral-100"
+              style={{ clipPath: mobileImageClipPath }}
+            >
+              <img
+                src="/images/about/story-bg.png"
+                alt={t('aboutPage.storyImageAlt')}
+                className="block h-auto w-full animate-gentle-zoom"
+              />
+            </div>
           </div>
 
           {/* Story card -- ms-auto (not ml-auto) so it sits at the inline-end
-              side for both languages: right in English, left in Arabic. */}
-          <div className="relative ms-auto w-full max-w-[460px]">
+              side for both languages: right in English, left in Arabic.
+              On mobile it overlaps the bottom of the image (-mt-10). */}
+          <div className="relative z-10 -mt-10 ms-auto w-full max-w-[460px] lg:mt-0">
             <div
-              className="relative min-h-[600px] bg-white px-9 py-12 sm:px-11 sm:py-14 lg:min-h-[620px]"
+              className="relative min-h-0 bg-white px-9 py-12 sm:px-11 sm:py-14 lg:min-h-[620px]"
               style={{ clipPath: cardClipPath }}
             >
               <div className="mb-6 flex items-center gap-3">
                 <span className="h-[1.5px] w-6 bg-accent" />
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-accent rtl:normal-case rtl:tracking-normal">
+                <span className="text-xs md:text-xl font-bold uppercase tracking-[0.25em] text-accent rtl:normal-case rtl:tracking-normal">
                   {t('aboutPage.storyEyebrow')}
                 </span>
               </div>
@@ -99,6 +122,9 @@ export default function StoryHero() {
               <p className="mt-3 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700">
                 {t('aboutPage.storyText2')}
               </p>
+
+              {/* extra bottom room on mobile so the footer ornament doesn't touch the text */}
+              <div className="h-8 lg:hidden" />
 
               <div className="absolute bottom-5 start-9 end-[4.5rem] flex items-center gap-4 sm:start-11">
                 <span className="h-2.5 w-2.5 bg-accent" />

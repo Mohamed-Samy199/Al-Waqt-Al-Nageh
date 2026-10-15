@@ -1,40 +1,3 @@
-// import { useTranslation } from 'react-i18next';
-// import Container from '../ui/Container';
-
-// export default function ServicesIntro() {
-//   const { t } = useTranslation();
-
-//   return (
-//     <section className="py-16 md:py-24">
-//       <Container>
-//         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-//           <div>
-//             <div className="mb-4 flex items-center gap-3">
-//               <span className="h-px w-10 bg-accent" />
-//               <span className="text-xs font-bold uppercase tracking-[0.28em] text-primary-700 rtl:normal-case rtl:tracking-normal">
-//                 {t('servicesPage.introEyebrow')}
-//               </span>
-//             </div>
-//             <h2 className="max-w-xl text-3xl font-extrabold leading-tight text-primary-900 md:text-5xl">
-//               {t('servicesPage.introTitle')}
-//             </h2>
-//           </div>
-//           <p className="max-w-2xl text-lg leading-8 text-neutral-500">
-//             {t('servicesPage.introText')}
-//           </p>
-//         </div>
-//       </Container>
-//     </section>
-//   );
-// }
-
-
-
-
-
-
-
-
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -136,7 +99,7 @@ export default function ServiceIntro() {
                       }`}
                     >
                       <div className="absolute inset-0 opacity-10">
-                        <img src={card.image} alt="" className="h-full w-full object-cover grayscale" />
+                        <img src={card.image} alt="Al Waqt Al Nageh" className="h-full w-full object-cover grayscale" />
                       </div>
                       <div className="absolute -end-6 -top-8 h-24 w-24 rounded-full border border-accent/30" />
                       <div className="relative flex h-full flex-col justify-between">

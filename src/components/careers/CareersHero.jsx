@@ -10,7 +10,7 @@ export default function CareersHero() {
     <section className="relative isolate overflow-hidden bg-primary-900 pb-24 pt-36 text-white lg:pb-28 lg:pt-44">
       <img
         src="/images/categories/governmental.png"
-        alt=""
+        alt="Al Waqt Al Nageh"
         aria-hidden="true"
         className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
       />
