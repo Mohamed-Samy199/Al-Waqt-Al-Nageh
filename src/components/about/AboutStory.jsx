@@ -60,14 +60,14 @@ export default function StoryHero() {
           >
             <img
               src="/images/about/story-bg.png"
-              alt=""
+              alt={t('aboutPage.storyImageAlt')}
               className="h-full w-full animate-gentle-zoom object-cover object-left rtl:object-right"
             />
           </div>
 
           {/* Mobile image */}
           <div className="relative mb-8 block h-[420px] overflow-hidden lg:hidden">
-            <img src="/images/about/story-bg.png" alt="" className="h-full w-full animate-gentle-zoom object-cover" />
+            <img src="/images/about/story-bg.png" alt={t('aboutPage.storyImageAlt')} className="h-full w-full animate-gentle-zoom object-cover" />
           </div>
 
           {/* Story card -- ms-auto (not ml-auto) so it sits at the inline-end

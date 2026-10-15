@@ -60,7 +60,7 @@
   },
   "featured": {
     "eyebrow": "Selected Projects",
-    "headingLine1": "Major Projects,",
+    "headingLine1": "Major Projects",
     "headingLine2": "Execution You Can Build On.",
     "subtitle": "A proven record of delivery against quality standards, schedules, and approved specifications.",
     "cta": "Explore all projects"
@@ -444,5 +444,10 @@
         }
       }
     }
+  },
+    "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or may have moved.",
+    "cta": "Return to homepage"
   }
 }

@@ -1,22 +1,6 @@
 // Line icons for the category cards. Drawn inline (no icon library),
 // sharing one wrapper so the stroke settings live in a single place.
-
-function IconBase({ children }) {
-  return (
-    <svg
-      viewBox="0 0 48 48"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.7"
-      className="h-full w-full"
-      aria-hidden="true"
-    >
-      {children}
-    </svg>
-  );
-}
+import IconBase from './CategoryIconBase';
 
 const categoryIcons = {
   governmental: (

@@ -1,0 +1,16 @@
+{
+  "name": "Al Waqt Al Nageh Construction and Buildings",
+  "short_name": "Al Waqt Al Nageh",
+  "description": "Construction and finishing contractor operating across Egypt and Saudi Arabia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#010C4F",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

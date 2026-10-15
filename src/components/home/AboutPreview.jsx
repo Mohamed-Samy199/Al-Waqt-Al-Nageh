@@ -76,7 +76,14 @@ export default function AboutPreview() {
       */}
       <Container className="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.6fr]">
         <div className={isArabic ? 'text-right' : 'text-left'}>
-          <h2 className="text-3xl font-extrabold leading-[1.08] text-primary-900 md:text-4xl max-w-xl">
+          <div className={`flex items-center gap-3 mb-4 ${isArabic ? 'flex-row-reverse justify-end' : ''}`}>
+            <span className="h-px w-8 bg-primary-700" />
+            <span className="text-sm font-semibold tracking-wide text-primary-700">
+              {t('about.eyebrow')}
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-[2.6rem] font-bold text-primary-900 leading-tight max-w-xl">
             {t('about.heading')}
           </h2>
 
@@ -109,7 +116,7 @@ export default function AboutPreview() {
         <div className="relative overflow-hidden lg:-me-[calc(max((100vw-80rem)/2,0px)+2rem)]">
           <img
             src="/images/about/about-illustration.png"
-            alt=""
+            alt={t('about.imageAlt')}
             className="w-full h-auto select-none animate-gentle-zoom"
           />
         </div>

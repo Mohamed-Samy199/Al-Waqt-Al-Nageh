@@ -7,12 +7,15 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/Projectdetail';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
-import ScrollToTop from './components/shared/ScrollToTop';
 import Careers from './pages/Careers';
+import NotFound from './pages/NotFound';
+import ScrollToTop from './components/shared/ScrollToTop';
+import SeoHead from './components/seo/SeoHead';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <SeoHead />
       <Navbar />
       <main>
         <Routes>
@@ -23,6 +26,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <ScrollToTop />

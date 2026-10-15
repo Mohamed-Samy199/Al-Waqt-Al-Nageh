@@ -94,7 +94,7 @@ export default function CategoryCard({ category, index }) {
       >
         <img
           src={category.image}
-          alt=""
+          alt={`${t(`categories.${category.key}`)} construction projects`}
           loading="lazy"
           className={`h-full w-full rounded-[28px] object-cover ${imageClip}`}
         />
