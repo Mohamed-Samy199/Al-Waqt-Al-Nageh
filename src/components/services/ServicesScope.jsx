@@ -27,7 +27,13 @@ export default function ServicesScope() {
   return (
     <section className="bg-neutral-50 py-10 md:py-14">
       <Container>
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        {/* Heading — scroll reveal handled by AOS */}
+        <div
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-once="true"
+          className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end"
+        >
           <div>
             <p className="mb-3 text-xl font-bold text-accent">{t('servicesPage.scopeEyebrow')}</p>
             <h2 className="text-3xl font-extrabold text-primary-900 md:text-4xl">{t('servicesPage.scopeTitle')}</h2>
@@ -36,36 +42,43 @@ export default function ServicesScope() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceItems.map(({ key, icon: Icon, index, image }) => (
-            <article
+          {serviceItems.map(({ key, icon: Icon, index, image }, i) => (
+            // AOS is on this wrapper, not on the <article>: AOS overrides the element's
+            // `transition-property`, which would break the card's hover shadow transition.
+            <div
               key={key}
-              className="group relative overflow-visible rounded-2xl border border-neutral-200 bg-white shadow-[0_12px_30px_rgba(1,10,82,0.08)] transition-shadow duration-300 hover:shadow-none"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay={(i % 4) * 100}
+              data-aos-once="true"
             >
-              <div className="relative h-40 overflow-hidden rounded-t-2xl bg-neutral-200">
-                <img
-                  src={image}
-                  alt={t(`servicesPage.items.${key}.title`)}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-l from-primary-900/25 via-primary-900/8 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
-                <span className="absolute end-4 top-4 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[10px] font-bold tracking-widest text-primary-900 shadow-sm">
-                  {index}
-                </span>
-              </div>
+              <article className="group relative h-full overflow-visible rounded-2xl border border-neutral-200 bg-white shadow-[0_12px_30px_rgba(1,10,82,0.08)] transition-shadow duration-300 hover:shadow-none">
+                <div className="relative h-40 overflow-hidden rounded-t-2xl bg-neutral-200">
+                  <img
+                    src={image}
+                    alt={t(`servicesPage.items.${key}.title`)}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-primary-900/25 via-primary-900/8 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                  <span className="absolute end-4 top-4 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[10px] font-bold tracking-widest text-primary-900 shadow-sm">
+                    {index}
+                  </span>
+                </div>
 
-              <div className="relative p-6 pt-9">
-                <span className="absolute -top-6 start-6 flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-white text-primary-900 shadow-md transition-colors duration-300 group-hover:bg-primary-900 group-hover:text-white">
-                  <Icon size={22} strokeWidth={1.8} />
-                </span>
-                <h3 className="text-lg font-bold leading-snug text-primary-900">
-                  {t(`servicesPage.items.${key}.title`)}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-neutral-500">{t(`servicesPage.items.${key}.text`)}</p>
-                <div className="mt-5 h-0.5 w-8 bg-accent transition-all duration-300 group-hover:w-14" />
-              </div>
-            </article>
+                <div className="relative p-6 pt-9">
+                  <span className="absolute -top-6 start-6 flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-white text-primary-900 shadow-md transition-colors duration-300 group-hover:bg-primary-900 group-hover:text-white">
+                    <Icon size={22} strokeWidth={1.8} />
+                  </span>
+                  <h3 className="text-lg font-bold leading-snug text-primary-900">
+                    {t(`servicesPage.items.${key}.title`)}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-neutral-500">{t(`servicesPage.items.${key}.text`)}</p>
+                  <div className="mt-5 h-0.5 w-8 bg-accent transition-all duration-300 group-hover:w-14" />
+                </div>
+              </article>
+            </div>
           ))}
         </div>
       </Container>

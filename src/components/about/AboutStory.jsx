@@ -27,6 +27,9 @@ export default function StoryHero() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.toLowerCase().startsWith('ar');
 
+  // إنجليزي: النص يدخل من الشمال لموضعه | عربي: من اليمين لموضعه
+  const fromStart = isArabic ? 'fade-left' : 'fade-right';
+
   // The card's two "far" corners are chamfered. In ltr that's the right
   // side; under rtl the whole composition mirrors (image/card swap sides
   // via logical properties below), so the chamfer needs to mirror too --
@@ -102,12 +105,19 @@ export default function StoryHero() {
             >
               <div className="mb-6 flex items-center gap-3">
                 <span className="h-[1.5px] w-6 bg-accent" />
-                <span className="text-xs md:text-xl font-bold uppercase tracking-[0.25em] text-accent rtl:normal-case rtl:tracking-normal">
+                <span
+                  data-aos="fade-down"
+                  className="text-xs md:text-xl font-bold uppercase tracking-[0.25em] text-accent rtl:normal-case rtl:tracking-normal"
+                >
                   {t('aboutPage.storyEyebrow')}
                 </span>
               </div>
 
-              <h2 className="text-[32px] font-extrabold leading-[1.2] text-primary-900 sm:text-[40px]">
+              <h2
+                data-aos={fromStart}
+                data-aos-delay="100"
+                className="text-[32px] font-extrabold leading-[1.2] text-primary-900 sm:text-[40px]"
+              >
                 {t('aboutPage.storyTitleLine1')}
                 <br />
                 {t('aboutPage.storyTitleLine2')}
@@ -116,10 +126,18 @@ export default function StoryHero() {
 
               <span className="mt-7 block h-[2px] w-12 bg-accent" />
 
-              <p className="mt-7 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700">
+              <p
+                data-aos={fromStart}
+                data-aos-delay="250"
+                className="mt-7 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700"
+              >
                 {t('aboutPage.storyText1')}
               </p>
-              <p className="mt-3 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700">
+              <p
+                data-aos={fromStart}
+                data-aos-delay="350"
+                className="mt-3 max-w-[360px] text-[15px] leading-[1.95] text-neutral-700"
+              >
                 {t('aboutPage.storyText2')}
               </p>
 
@@ -143,19 +161,31 @@ export default function StoryHero() {
           <div className="absolute top-[9px] start-0 end-[6%] h-px bg-accent/40" />
 
           <div className="grid grid-cols-2 gap-x-6 gap-y-14 lg:grid-cols-4 lg:gap-x-10">
-            {milestoneKeys.map((key) => (
+            {milestoneKeys.map((key, index) => (
               <div key={key} className="relative pt-9">
                 <span className="absolute start-0 top-0 flex h-[18px] w-[18px] items-center justify-center rounded-full border-2 border-accent bg-neutral-50">
                   <span className="h-[6px] w-[6px] rounded-full bg-accent" />
                 </span>
 
-                <span className="mb-1 block text-[13px] font-bold tracking-[0.1em] text-accent">
+                <span
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
+                  className="mb-1 block text-[13px] font-bold tracking-[0.1em] text-accent"
+                >
                   {t(`aboutPage.milestones.${key}.era`)}
                 </span>
-                <h4 className="mb-2.5 text-[17px] font-bold text-primary-900">
+                <h4
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200 + 100}
+                  className="mb-2.5 text-[17px] font-bold text-primary-900"
+                >
                   {t(`aboutPage.milestones.${key}.title`)}
                 </h4>
-                <p className="max-w-[230px] text-[13.5px] leading-[1.8] text-neutral-500">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200 + 200}
+                  className="max-w-[230px] text-[13.5px] leading-[1.8] text-neutral-500"
+                >
                   {t(`aboutPage.milestones.${key}.text`)}
                 </p>
               </div>

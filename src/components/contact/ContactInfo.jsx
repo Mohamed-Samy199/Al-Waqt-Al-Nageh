@@ -5,7 +5,7 @@ export default function ContactInfo() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
       <h2 className="mb-6 text-4xl font-extrabold leading-tight text-primary-900 md:text-5xl">
         {t('contactPage.officesEyebrow')}
       </h2>

@@ -13,6 +13,9 @@ export default function WhyUsSection() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.toLowerCase().startsWith('ar');
 
+  // إنجليزي: النص يدخل من الشمال لموضعه | عربي: من اليمين لموضعه
+  const fromStart = isArabic ? 'fade-left' : 'fade-right';
+
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-primary-900 py-24 text-white">
       {/* Video background with poster fallback */}
@@ -51,16 +54,27 @@ export default function WhyUsSection() {
         <div className={isArabic ? 'text-right' : 'text-left'}>
           <div className="mb-4 flex items-center gap-3">
             {/* <span className="h-px w-8 bg-white" /> */}
-            <span className="text-xs md:text-xl font-semibold uppercase tracking-[0.3em] text-white rtl:normal-case rtl:tracking-normal">
+            <span
+              data-aos="fade-down"
+              className="text-xs md:text-xl font-semibold uppercase tracking-[0.3em] text-white rtl:normal-case rtl:tracking-normal"
+            >
               {t('whyUs.eyebrow')}
             </span>
           </div>
 
-          <h2 className={`text-4xl font-extrabold leading-[1.08] md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
+          <h2
+            data-aos={fromStart}
+            data-aos-delay="100"
+            className={`text-4xl font-extrabold leading-[1.08] md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}
+          >
             {t('whyUs.title')}
           </h2>
 
-          <p className="mt-6 max-w-md text-lg font-light leading-relaxed text-white/80">
+          <p
+            data-aos={fromStart}
+            data-aos-delay="250"
+            className="mt-6 max-w-md text-lg font-light leading-relaxed text-white/80"
+          >
             {t('whyUs.subtitle')}
           </p>
         </div>
@@ -72,13 +86,27 @@ export default function WhyUsSection() {
               key={reason}
               className="relative border-s-2 border-white/80 ps-6 transition-all duration-300 hover:translate-x-1 rtl:hover:-translate-x-1"
             >
-              <span className="font-mono text-sm font-bold text-white/90">0{index + 1}</span>
+              <span
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
+                className="inline-block font-mono text-sm font-bold text-white/90"
+              >
+                0{index + 1}
+              </span>
 
-              <h3 className="mt-3 font-heading text-2xl font-extrabold leading-tight text-white">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay={index * 200 + 100}
+                className="mt-3 font-heading text-2xl font-extrabold leading-tight text-white"
+              >
                 {t(`whyUs.items.${reason}.title`)}
               </h3>
 
-              <p className="mt-3 text-sm font-light leading-7 text-white/75">
+              <p
+                data-aos="fade-up"
+                data-aos-delay={index * 200 + 200}
+                className="mt-3 text-sm font-light leading-7 text-white/75"
+              >
                 {t(`whyUs.items.${reason}.text`)}
               </p>
             </article>

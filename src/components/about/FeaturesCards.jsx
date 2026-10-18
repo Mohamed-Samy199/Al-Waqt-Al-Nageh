@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
@@ -41,43 +40,11 @@ const VALUE_KEYS = [
   { key: 'commitment', Icon: IconCommitment, image: '/images/about/value-3.png' },
 ];
 
-// Lightweight scroll-reveal (no extra animation library): once the section
-// enters the viewport, each card fades/slides in with a small stagger.
-function useRevealOnScroll() {
-  const sectionRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) return undefined;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return { sectionRef, visible };
-}
-
-function ValueCard({ valueKey, Icon, image, number, visible, delay }) {
+function ValueCard({ valueKey, Icon, image, number, delay }) {
   const { t } = useTranslation();
 
   return (
-    <div
-      style={{ transitionDelay: visible ? `${delay}ms` : '0ms' }}
-      className={`group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-xl transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl ${
-        visible ? 'translate-y-0 opacity-100' : 'translate-y-14 opacity-0'
-      }`}
-    >
+    <div className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-xl transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl">
       {/* Architectural image, curved into the card from the top end-corner */}
       <div className="pointer-events-none absolute top-0 end-0 h-48 w-2/3 overflow-hidden rounded-es-[100px]">
         <img
@@ -95,17 +62,30 @@ function ValueCard({ valueKey, Icon, image, number, visible, delay }) {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="text-xl font-bold text-primary-900">{number}</span>
+          <span
+            data-aos="fade-up"
+            data-aos-delay={delay}
+            className="inline-block text-xl font-bold text-primary-900"
+          >
+            {number}
+          </span>
           <div className="h-[2px] w-8 bg-primary-900" />
         </div>
       </div>
 
       {/* Title + text */}
       <div className="relative z-10 space-y-4 pt-6 text-start">
-        <h3 className="text-2xl font-bold text-primary-900 transition-colors group-hover:text-primary-600">
-          {t(`aboutPage.values.${valueKey}.title`)}
-        </h3>
-        <p className="text-sm font-light leading-relaxed text-neutral-500">
+        {/* الـ wrapper بيحمل الـ AOS عشان الـ h3 يحتفظ بـ transition تغيير اللون عند الـ hover */}
+        <div data-aos="fade-up" data-aos-delay={delay + 100}>
+          <h3 className="text-2xl font-bold text-primary-900 transition-colors group-hover:text-primary-600">
+            {t(`aboutPage.values.${valueKey}.title`)}
+          </h3>
+        </div>
+        <p
+          data-aos="fade-up"
+          data-aos-delay={delay + 200}
+          className="text-sm font-light leading-relaxed text-neutral-500"
+        >
           {t(`aboutPage.values.${valueKey}.text`)}
         </p>
       </div>
@@ -118,10 +98,9 @@ function ValueCard({ valueKey, Icon, image, number, visible, delay }) {
 
 export default function FeaturesCards() {
   const { t } = useTranslation();
-  const { sectionRef, visible } = useRevealOnScroll();
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-neutral-50 py-28">
+    <section className="relative overflow-hidden bg-neutral-50 py-28">
       <Container className="relative z-10">
         <SectionHeading title={t('aboutPage.valuesTitle')} />
 
@@ -133,7 +112,6 @@ export default function FeaturesCards() {
               Icon={Icon}
               image={image}
               number={String(index + 1).padStart(2, '0')}
-              visible={visible}
               delay={index * 200}
             />
           ))}

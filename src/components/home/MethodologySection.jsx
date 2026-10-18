@@ -7,6 +7,9 @@ export default function MethodologySection() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.toLowerCase().startsWith('ar');
 
+  // إنجليزي: النص يدخل من الشمال لموضعه | عربي: من اليمين لموضعه
+  const fromStart = isArabic ? 'fade-left' : 'fade-right';
+
   return (
     <section className="relative overflow-hidden bg-white py-20 text-primary-900 sm:py-24 lg:py-32">
       {/* Methodology visual (desktop only) */}
@@ -30,13 +33,24 @@ export default function MethodologySection() {
 
       <Container className="relative z-10">
         <div className="mb-12 max-w-3xl sm:mb-16 lg:max-w-xl">
-          <span className="mb-4 flex items-center gap-3 text-xs md:text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal">
+          <span
+            data-aos="fade-down"
+            className="mb-4 flex items-center gap-3 text-xs md:text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal"
+          >
             {t('methodology.eyebrow')}
           </span>
-          <h2 className={`text-4xl font-extrabold leading-[1.08] text-primary-900 md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
+          <h2
+            data-aos={fromStart}
+            data-aos-delay="100"
+            className={`text-4xl font-extrabold leading-[1.08] text-primary-900 md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}
+          >
             {t('methodology.title')}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-500 sm:mt-6 sm:text-lg">
+          <p
+            data-aos={fromStart}
+            data-aos-delay="250"
+            className="mt-5 max-w-2xl text-base leading-7 text-neutral-500 sm:mt-6 sm:text-lg"
+          >
             {t('methodology.subtitle')}
           </p>
         </div>

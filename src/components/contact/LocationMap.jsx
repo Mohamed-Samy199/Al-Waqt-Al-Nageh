@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function PinIcon() {
   return (
@@ -18,24 +18,29 @@ function PinIcon() {
 }
 
 export default function LocationMap({
-  address = 'King Fahad Bin Abdulaziz Rd, Al Khubar Ash Shamaliyah Dist., Saudi Arabia',
+  address = "King Fahad Bin Abdulaziz Rd, Al Khubar Ash Shamaliyah Dist., Saudi Arabia",
 }) {
   const { t } = useTranslation();
 
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    address
-   )}`;
+    address,
+  )}`;
 
   const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-    address
-   )}&output=embed`;
+    address,
+  )}&output=embed`;
 
   return (
     <section className="pb-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative h-72 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 md:h-96">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-once="true"
+          className="relative h-72 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 md:h-96"
+        >
           <iframe
-            title={t('contactPage.mapTitle')}
+            title={t("contactPage.mapTitle")}
             src={mapEmbedUrl}
             className="h-full w-full border-0 grayscale-[15%]"
             loading="lazy"
@@ -49,9 +54,7 @@ export default function LocationMap({
               </span>
 
               <div>
-                <p className="text-sm font-bold">
-                  {t('contactPage.mapTitle')}
-                </p>
+                <p className="text-sm font-bold">{t("contactPage.mapTitle")}</p>
 
                 <p className="mt-1 text-xs leading-relaxed text-neutral-500">
                   {address}
@@ -65,7 +68,7 @@ export default function LocationMap({
               rel="noreferrer"
               className="shrink-0 rounded-full bg-primary-700 px-4 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-900"
             >
-              {t('contactPage.openMap')}
+              {t("contactPage.openMap")}
             </a>
           </div>
         </div>

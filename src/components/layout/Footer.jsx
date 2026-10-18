@@ -55,7 +55,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_0.7fr_1fr_1fr]">
           {/* Brand */}
-          <div>
+          <div data-aos="fade-up" data-aos-duration="600" data-aos-offset="40" data-aos-once="true">
             <Link to="/" className="group inline-block">
               <div className="flex items-center gap-3">
                 <img
@@ -97,7 +97,13 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="100"
+            data-aos-offset="40"
+            data-aos-once="true"
+          >
             <div className="mb-6 text-[10px] uppercase tracking-[0.25em] text-white/40">
               {isArabic ? "استكشف" : "Explore"}
             </div>
@@ -117,7 +123,13 @@ export default function Footer() {
           </div>
 
           {/* Selected Projects */}
-          <div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="200"
+            data-aos-offset="40"
+            data-aos-once="true"
+          >
             <div className="mb-6 text-[10px] uppercase tracking-[0.25em] text-white/40">
               {isArabic ? "مشاريع مختارة" : "Selected Projects"}
             </div>
@@ -143,7 +155,13 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay="300"
+            data-aos-offset="40"
+            data-aos-once="true"
+          >
             <div className="mb-6 text-[10px] uppercase tracking-[0.25em] text-white/40">
               {isArabic ? "تواصل معنا" : "Get In Touch"}
             </div>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Container from '../ui/Container';
 
 export default function PageHero({
@@ -11,6 +12,12 @@ export default function PageHero({
   showImage = true,
   className = '',
 }) {
+  const { i18n } = useTranslation();
+  const isArabic = i18n.language?.toLowerCase().startsWith('ar');
+
+  // إنجليزي: النص يدخل من الشمال لموضعه | عربي: من اليمين لموضعه
+  const fromStart = isArabic ? 'fade-left' : 'fade-right';
+
   return (
     <section
       className={`relative overflow-hidden bg-neutral-50 pt-36 pb-20 text-primary-900 border-b border-neutral-200 ${className}`}
@@ -55,17 +62,28 @@ export default function PageHero({
 
           {/* العنوان الرئيسي */}
           {eyebrow && (
-            <span className="mb-4 block text-xs md:text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal">
+            <span
+              data-aos="fade-down"
+              className="mb-4 block text-xs md:text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal"
+            >
               {eyebrow}
             </span>
           )}
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight text-primary-900 md:text-7xl font-heading">
+          <h1
+            data-aos={fromStart}
+            data-aos-delay="100"
+            className="text-5xl font-extrabold leading-[1.05] tracking-tight text-primary-900 md:text-7xl font-heading"
+          >
             {title}
           </h1>
 
           {/* الوصف */}
           {subtitle && (
-            <p className="mt-6 max-w-xl text-neutral-500 font-body text-base md:text-xl leading-relaxed">
+            <p
+              data-aos={fromStart}
+              data-aos-delay="250"
+              className="mt-6 max-w-xl text-neutral-500 font-body text-base md:text-xl leading-relaxed"
+            >
               {subtitle}
             </p>
           )}

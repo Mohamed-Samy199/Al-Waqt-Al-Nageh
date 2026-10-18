@@ -58,7 +58,7 @@ function ArchitecturalDetail() {
   );
 }
 
-function VisionMissionCard({ id, titleKey, textKey, Icon, dark, isArabic }) {
+function VisionMissionCard({ id, titleKey, textKey, Icon, dark, isArabic, delay = 0 }) {
   // Both "far" corners are chamfered -- the end side (right) in English,
   // the start side (left) in Arabic. Same mirrored-clip-path trick used on
   // the Our Story card.
@@ -106,15 +106,29 @@ function VisionMissionCard({ id, titleKey, textKey, Icon, dark, isArabic }) {
         </div>
 
         <div className="mt-6 flex items-center gap-3">
-          <span className="text-[15px] font-bold tracking-[0.08em] text-accent">{id}</span>
+          <span
+            data-aos="fade-up"
+            data-aos-delay={delay}
+            className="inline-block text-[15px] font-bold tracking-[0.08em] text-accent"
+          >
+            {id}
+          </span>
           <span className="h-[1.5px] w-10 bg-accent" />
         </div>
 
-        <h3 className={`mt-3 text-[25px] font-bold tracking-[0.02em] sm:text-[27px] ${dark ? 'text-white' : 'text-primary-900'}`}>
+        <h3
+          data-aos="fade-up"
+          data-aos-delay={delay + 100}
+          className={`mt-3 text-[25px] font-bold tracking-[0.02em] sm:text-[27px] ${dark ? 'text-white' : 'text-primary-900'}`}
+        >
           {titleKey}
         </h3>
 
-        <p className={`mt-5 max-w-[500px] text-[14px] leading-[1.9] sm:text-[14.5px] ${dark ? 'text-white/75' : 'text-neutral-500'}`}>
+        <p
+          data-aos="fade-up"
+          data-aos-delay={delay + 200}
+          className={`mt-5 max-w-[500px] text-[14px] leading-[1.9] sm:text-[14.5px] ${dark ? 'text-white/75' : 'text-neutral-500'}`}
+        >
           {textKey}
         </p>
 
@@ -161,6 +175,7 @@ export default function VisionMissionSection() {
             Icon={EyeIcon}
             dark
             isArabic={isArabic}
+            delay={0}
           />
 
           <div className="relative z-20 flex items-center justify-center">
@@ -176,6 +191,7 @@ export default function VisionMissionSection() {
             Icon={TargetIcon}
             dark={false}
             isArabic={isArabic}
+            delay={300}
           />
         </div>
       </div>

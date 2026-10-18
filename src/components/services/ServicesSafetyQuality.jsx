@@ -1,14 +1,20 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import Container from '../ui/Container';
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import Container from "../ui/Container";
 
 const safetyItems = [
-  { key: 'siteSafetyPlan',     image: '/images/capabilities/circular-column.jpg' },
-  { key: 'ppe',                image: '/images/capabilities/column-cage.jpg' },
-  { key: 'formworkInspection', image: '/images/capabilities/formwork-panel.jpg' },
-  { key: 'testing',            image: '/images/capabilities/slab-reinforcement.jpg' },
-  { key: 'inspectionSignOff',  image: '/images/capabilities/steel-formwork.jpg' },
-  { key: 'reporting',          image: '/images/capabilities/wall-formwork.jpg' },
+  { key: "siteSafetyPlan", image: "/images/capabilities/circular-column.jpg" },
+  { key: "ppe", image: "/images/capabilities/column-cage.jpg" },
+  {
+    key: "formworkInspection",
+    image: "/images/capabilities/formwork-panel.jpg",
+  },
+  { key: "testing", image: "/images/capabilities/slab-reinforcement.jpg" },
+  {
+    key: "inspectionSignOff",
+    image: "/images/capabilities/steel-formwork.jpg",
+  },
+  { key: "reporting", image: "/images/capabilities/wall-formwork.jpg" },
 ];
 
 /* ---------- Geometry (viewBox 1000 x 1000) ---------- */
@@ -28,7 +34,14 @@ const THIRD_LIFT = 130; // التالت أقرب لمكانه الأصلي
 const FOURTH_LIFT = 110; // الرابع
 const FIFTH_LIFT = 110; // الخامس
 const SIXTH_LIFT = 110; // السادس
-const LIFTS = [FIRST_LIFT, SECOND_LIFT, THIRD_LIFT, FOURTH_LIFT, FIFTH_LIFT, SIXTH_LIFT];
+const LIFTS = [
+  FIRST_LIFT,
+  SECOND_LIFT,
+  THIRD_LIFT,
+  FOURTH_LIFT,
+  FIFTH_LIFT,
+  SIXTH_LIFT,
+];
 
 const SECOND_UP = 70; // رفع التاني لفوق
 const THIRD_UP = 40; // رفع التالت لفوق
@@ -53,7 +66,7 @@ const liftVector = (index, dist) => {
 };
 
 /* ---------- Border ---------- */
-const BORDER_COLOR = '#d6eaff'; // أزرق فاتح مبيض
+const BORDER_COLOR = "#d6eaff"; // أزرق فاتح مبيض
 const BORDER_OPACITY = 0.7;
 const BORDER_W = 14;
 
@@ -113,7 +126,16 @@ const segments = safetyItems.map((item, i) => {
   // مكان العنوان (قبل الإزاحة، فبيتحرك مع القطاع)
   const [tx, ty] = pt(TITLE_R, a0 + STEP / 2 + TITLE_SHIFT[i]);
 
-  return { ...item, d, x, y, w: Math.max(...xs) - x, h: Math.max(...ys) - y, tx, ty };
+  return {
+    ...item,
+    d,
+    x,
+    y,
+    w: Math.max(...xs) - x,
+    h: Math.max(...ys) - y,
+    tx,
+    ty,
+  };
 });
 
 function Piece({ s, clip, index, title, onOpen }) {
@@ -126,7 +148,7 @@ function Piece({ s, clip, index, title, onOpen }) {
       aria-label={title}
       onClick={() => onOpen(index)}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           onOpen(index);
         }
@@ -172,16 +194,22 @@ function Piece({ s, clip, index, title, onOpen }) {
         y={s.ty - TITLE_H / 2}
         width={TITLE_W}
         height={TITLE_H}
-        style={{ pointerEvents: 'none', overflow: 'visible' }}
+        style={{ pointerEvents: "none", overflow: "visible" }}
       >
         <div
           className="flex h-full flex-col items-center justify-center text-center text-white"
           style={{ fontSize: TITLE_FONT, lineHeight: 1.25 }}
         >
-          <h3 className="font-extrabold" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.65)' }}>
+          <h3
+            className="font-extrabold"
+            style={{ textShadow: "0 2px 10px rgba(0,0,0,0.65)" }}
+          >
             {title}
           </h3>
-          <span className="mt-3 block bg-accent" style={{ width: 60, height: 6 }} />
+          <span
+            className="mt-3 block bg-accent"
+            style={{ width: 60, height: 6 }}
+          />
         </div>
       </foreignObject>
     </g>
@@ -218,28 +246,42 @@ export default function ServicesSafetyQuality() {
   // Esc بيقفل الـ popup + قفل سكرول الصفحة وهو مفتوح
   useEffect(() => {
     if (active === null) return;
-    const onKey = (e) => e.key === 'Escape' && closePopup();
-    document.addEventListener('keydown', onKey);
+    const onKey = (e) => e.key === "Escape" && closePopup();
+    document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', onKey);
+      document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
   }, [active, closePopup]);
 
   // عنوان السنتر: لو عايز تغيّره أو تترجمه ضيف المفتاح servicesPage.safety.center
   // (لازم يفضل فيه & عشان يتقسم لسطرين)
-  const isRtl = i18n.dir() === 'rtl';
-  const centerText = t('servicesPage.safety.center', { defaultValue: 'Safety & Quality' });
-  const [centerFirst, centerSecond] = centerText.split('&').map((p) => p.trim());
+  const isRtl = i18n.dir() === "rtl";
+  const centerText = t("servicesPage.safety.center", {
+    defaultValue: "Safety & Quality",
+  });
+  const [centerFirst, centerSecond] = centerText
+    .split("&")
+    .map((p) => p.trim());
 
   return (
     <section className="bg-white py-10">
       <Container>
-        <div className="mx-auto aspect-square w-full max-w-[800px]">
+        {/* <div className="mx-auto aspect-square w-full max-w-[800px]"> */}
+        {/* Scroll reveal by AOS. Kept on this wrapper only (not on <section>), see note below. */}
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-once="true"
+          className="mx-auto aspect-square w-full max-w-[800px]"
+        >
           {/* text-primary-700 هو لون الطبقة الزرقاء (stopColor="currentColor") */}
-          <svg viewBox="-160 -130 1460 1460" className="h-full w-full text-primary-700">
+          <svg
+            viewBox="-160 -130 1460 1460"
+            className="h-full w-full text-primary-700"
+          >
             <defs>
               <filter
                 id="safety-shadow"
@@ -259,8 +301,16 @@ export default function ServicesSafetyQuality() {
               </filter>
 
               <linearGradient id="safety-tint" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="currentColor" stopOpacity={TINT_TOP} />
-                <stop offset="1" stopColor="currentColor" stopOpacity={TINT_BOTTOM} />
+                <stop
+                  offset="0"
+                  stopColor="currentColor"
+                  stopOpacity={TINT_TOP}
+                />
+                <stop
+                  offset="1"
+                  stopColor="currentColor"
+                  stopOpacity={TINT_BOTTOM}
+                />
               </linearGradient>
 
               {segments.map((s, i) => (
@@ -290,7 +340,7 @@ export default function ServicesSafetyQuality() {
             })}
 
             {/* عنوان السنتر: SVG text ومرسوم فوق القطاعات */}
-            <g style={{ pointerEvents: 'none' }} textAnchor="middle">
+            <g style={{ pointerEvents: "none" }} textAnchor="middle">
               <text
                 className="fill-primary-900"
                 x={C + CENTER_SHIFT_X}
@@ -334,7 +384,7 @@ export default function ServicesSafetyQuality() {
       {activeItem && (
         <div
           className={`fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm transition-opacity ease-out motion-reduce:transition-none ${
-            visible ? 'opacity-100' : 'opacity-0'
+            visible ? "opacity-100" : "opacity-0"
           }`}
           style={{ transitionDuration: `${POPUP_MS}ms` }}
           onClick={closePopup}
@@ -344,7 +394,9 @@ export default function ServicesSafetyQuality() {
         >
           <div
             className={`relative max-h-[90vh] w-full max-w-2xl overflow-y-auto bg-white shadow-2xl transition-all ease-out motion-reduce:transition-none ${
-              visible ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'
+              visible
+                ? "translate-y-0 scale-100 opacity-100"
+                : "translate-y-8 scale-95 opacity-0"
             }`}
             style={{ transitionDuration: `${POPUP_MS}ms` }}
             onClick={(e) => e.stopPropagation()}
@@ -363,9 +415,9 @@ export default function ServicesSafetyQuality() {
                 src={activeItem.image}
                 alt="Al Waqt Al Nageh"
                 className={`h-full w-full object-cover transition-transform ease-out motion-reduce:transition-none ${
-                  visible ? 'scale-100' : 'scale-110'
+                  visible ? "scale-100" : "scale-110"
                 }`}
-                style={{ transitionDuration: '900ms' }}
+                style={{ transitionDuration: "900ms" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent" />
               <span className="absolute bottom-4 start-6 font-mono text-sm font-bold tracking-widest text-accent">
@@ -375,7 +427,9 @@ export default function ServicesSafetyQuality() {
 
             <div
               className={`p-6 transition-all duration-500 ease-out motion-reduce:transition-none md:p-8 ${
-                visible ? 'translate-y-0 opacity-100 delay-100' : 'translate-y-3 opacity-0'
+                visible
+                  ? "translate-y-0 opacity-100 delay-100"
+                  : "translate-y-3 opacity-0"
               }`}
             >
               <h3 className="border-s-4 border-accent ps-4 text-2xl font-extrabold text-primary-900">

@@ -38,6 +38,9 @@ export default function AboutPreview() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.toLowerCase().startsWith('ar');
 
+  // إنجليزي: النص يطلع من الشمال لموضعه | عربي: من اليمين لموضعه
+  const fromStart = isArabic ? 'fade-left' : 'fade-right';
+
   const pillars = [
     { key: 'quality', Icon: IconQuality },
     { key: 'experience', Icon: IconExperience },
@@ -46,62 +49,54 @@ export default function AboutPreview() {
 
   return (
     <section id="about-preview" className="py-24 bg-white">
-      {/*
-        Column order is fixed in the DOM: text block first, image block
-        second -- for BOTH languages. We rely on the same trick used in the
-        Hero: the <html> element's `dir` attribute (set app-wide by
-        src/i18n/config.js) flips what "start"/"end" mean for CSS Grid's
-        auto-placement, exactly like it does for flexbox. So with no
-        per-language branching here:
-          - English (dir="ltr"): start = left  -> text lands left, image right
-          - Arabic  (dir="rtl"): start = right -> text lands right, image left
-        The image column is given noticeably more width (1fr vs 1.6fr) so
-        the illustration reads as clearly larger than the text column, and
-        that ratio mirrors correctly with the language too since it's
-        applied to "first track / second track", not to a physical side.
-
-        On large screens (lg+) the image is also pulled past the
-        container's own edge all the way to the actual viewport edge via a
-        negative margin, while the text column keeps its current padding
-        untouched. The margin is computed with calc() so it's exact at any
-        viewport width:
-          max((100vw - 80rem)/2, 0px)  -> the empty gutter outside the
-                                           1280px (80rem) container once the
-                                           viewport is wider than it (0 below)
-          + 2rem                       -> the container's own side padding
-
-        The image wrapper now carries overflow-hidden so the continuous
-        gentle-zoom animation on the <img> never bleeds past the image's
-        own box and re-introduces a horizontal scrollbar.
-      */}
+      {/* ...خلّي الكومنت الطويل زي ما هو... */}
       <Container className="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.6fr]">
         <div className={isArabic ? 'text-right' : 'text-left'}>
           <div className={`flex items-center gap-3 mb-4 ${isArabic ? 'flex-row-reverse justify-end' : ''}`}>
             <span className="h-px w-8 bg-primary-700" />
-            <span className="text-sm font-semibold tracking-wide text-primary-700">
+            <span
+              data-aos="fade-down"
+              className="text-sm font-semibold tracking-wide text-primary-700"
+            >
               {t('about.eyebrow')}
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-[2.6rem] font-bold text-primary-900 leading-tight max-w-xl">
+          <h2
+            data-aos={fromStart}
+            data-aos-delay="100"
+            className="text-3xl md:text-[2.6rem] font-bold text-primary-900 leading-tight max-w-xl"
+          >
             {t('about.heading')}
           </h2>
 
-          <p className="text-neutral-500 mt-6 text-lg leading-relaxed max-w-xl">
+          <p
+            data-aos={fromStart}
+            data-aos-delay="250"
+            className="text-neutral-500 mt-6 text-lg leading-relaxed max-w-xl"
+          >
             {t('about.text')}
           </p>
 
           {/* Three pillars: Quality / Experience / Commitment */}
           <div className="grid grid-cols-3 gap-6 mt-10">
-            {pillars.map(({ key, Icon }) => (
+            {pillars.map(({ key, Icon }, i) => (
               <div key={key} className={isArabic ? 'text-right' : 'text-left'}>
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-primary-700 mb-3">
                   <Icon />
                 </div>
-                <h3 className="font-semibold text-primary-900 text-sm md:text-base">
+                <h3
+                  data-aos="fade-up"
+                  data-aos-delay={i * 200}
+                  className="font-semibold text-primary-900 text-sm md:text-base"
+                >
                   {t(`about.pillars.${key}.title`)}
                 </h3>
-                <p className="text-neutral-500 text-xs md:text-sm mt-1 leading-relaxed">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay={i * 200 + 100}
+                  className="text-neutral-500 text-xs md:text-sm mt-1 leading-relaxed"
+                >
                   {t(`about.pillars.${key}.text`)}
                 </p>
               </div>

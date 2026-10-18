@@ -12,7 +12,10 @@ const capabilities = [
 export default function ExecutionCapabilities() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.toLowerCase().startsWith('ar');
-  
+
+  // إنجليزي: النص يدخل من الشمال لموضعه | عربي: من اليمين لموضعه
+  const fromStart = isArabic ? 'fade-left' : 'fade-right';
+
   // حالة للتحكم في الكارت النشط عند الضغط (للأجهزة اللوحية والموبايل)
   const [activeKey, setActiveKey] = useState(null);
 
@@ -27,10 +30,18 @@ export default function ExecutionCapabilities() {
           {/* <span className="mb-4 block text-xs font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal">
             {t('execution.eyebrow')}
           </span> */}
-          <h2 className={`text-4xl font-extrabold leading-[1.08] text-primary-900 md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}>
+          <h2
+            data-aos={fromStart}
+            data-aos-delay="100"
+            className={`text-4xl font-extrabold leading-[1.08] text-primary-900 md:text-5xl ${isArabic ? 'font-arHeading' : 'font-heading'}`}
+          >
             {t('execution.title')}
           </h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600 md:text-xl font-light">
+          <p
+            data-aos={fromStart}
+            data-aos-delay="250"
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600 md:text-xl font-light"
+          >
             {t('execution.subtitle')}
           </p>
         </div>

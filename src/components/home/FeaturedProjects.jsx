@@ -1,16 +1,32 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { projectHome } from '../../data/projects';
+import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { projectHome } from "../../data/projects";
+import i18n from "../../i18n/config";
 
 const DESKTOP_VISIBLE_COUNT = 3;
 const TABLET_VISIBLE_COUNT = 2;
 const AUTO_PLAY_DELAY = 2000;
 const SKEW_DEG = 5;
+const isArabic = i18n.language?.toLowerCase().startsWith("ar");
+const skew = isArabic ? SKEW_DEG : -SKEW_DEG;
+
+// إنجليزي: النص يدخل من الشمال لموضعه | عربي: من اليمين لموضعه
+const fromStart = isArabic ? "fade-left" : "fade-right";
 
 function NavArrowIcon({ pointLeft = false }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={pointLeft ? '-scale-x-100' : ''}>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={pointLeft ? "-scale-x-100" : ""}
+    >
       <path d="M5 12h14" />
       <path d="m13 6 6 6-6 6" />
     </svg>
@@ -19,7 +35,17 @@ function NavArrowIcon({ pointLeft = false }) {
 
 function OpenArrowIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rtl:-scale-x-100">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="rtl:-scale-x-100"
+    >
       <path d="M7 17 17 7" />
       <path d="M9 7h8v8" />
     </svg>
@@ -33,8 +59,8 @@ function ProjectSlide({ project, number, isActive, skew }) {
         <div
           className={`relative h-[360px] w-full overflow-hidden bg-primary-900 transition-all duration-500 sm:h-[400px] lg:h-[440px] xl:h-[460px] ${
             isActive
-              ? 'z-20 scale-[1.035] border-[3px] border-white shadow-[0_25px_70px_-20px_rgba(0,0,0,0.85)]'
-              : 'border border-white/15 opacity-90 hover:border-white/40 hover:opacity-100'
+              ? "z-20 scale-[1.035] border-[3px] border-white shadow-[0_25px_70px_-20px_rgba(0,0,0,0.85)]"
+              : "border border-white/15 opacity-90 hover:border-white/40 hover:opacity-100"
           }`}
           style={{ transform: `skewX(${skew}deg)` }}
         >
@@ -47,9 +73,14 @@ function ProjectSlide({ project, number, isActive, skew }) {
 
           <div className="absolute inset-0 bg-gradient-to-t from-primary-900/80 via-primary-900/25 to-transparent" />
 
-          <div className="absolute inset-0 flex flex-col justify-between p-5 sm:p-6" style={{ transform: `skewX(${-skew}deg)` }}>
+          <div
+            className="absolute inset-0 flex flex-col justify-between p-5 sm:p-6"
+            style={{ transform: `skewX(${-skew}deg)` }}
+          >
             <div className="flex items-start justify-between">
-              <span className="text-2xl font-bold tracking-wide text-white">{number}</span>
+              <span className="text-2xl font-bold tracking-wide text-white">
+                {number}
+              </span>
             </div>
 
             <div className="flex items-end justify-between gap-4">
@@ -57,7 +88,9 @@ function ProjectSlide({ project, number, isActive, skew }) {
                 <h3 className="truncate text-base font-bold text-white transition-opacity duration-300 group-hover:opacity-80 sm:text-lg lg:text-xl">
                   {project.name}
                 </h3>
-                <p className="mt-1 truncate text-xs text-white/65 sm:text-sm">{project.location}</p>
+                <p className="mt-1 truncate text-xs text-white/65 sm:text-sm">
+                  {project.location}
+                </p>
               </div>
 
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-primary-900 sm:h-11 sm:w-11">
@@ -66,7 +99,9 @@ function ProjectSlide({ project, number, isActive, skew }) {
             </div>
           </div>
 
-          {isActive && <span className="absolute bottom-0 start-0 h-[5px] w-24 bg-white" />}
+          {isActive && (
+            <span className="absolute bottom-0 start-0 h-[5px] w-24 bg-white" />
+          )}
         </div>
       </Link>
     </div>
@@ -75,28 +110,37 @@ function ProjectSlide({ project, number, isActive, skew }) {
 
 export default function FeaturedProjects() {
   const { t, i18n } = useTranslation();
-  const isArabic = i18n.language?.toLowerCase().startsWith('ar');
+  const isArabic = i18n.language?.toLowerCase().startsWith("ar");
   const skew = isArabic ? SKEW_DEG : -SKEW_DEG;
   const [visibleCount, setVisibleCount] = useState(DESKTOP_VISIBLE_COUNT);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia('(max-width: 639px)');
-    const tabletQuery = window.matchMedia('(max-width: 1023px)');
+    const mobileQuery = window.matchMedia("(max-width: 639px)");
+    const tabletQuery = window.matchMedia("(max-width: 1023px)");
     const updateViewport = () => {
-      setVisibleCount(mobileQuery.matches ? 1 : tabletQuery.matches ? TABLET_VISIBLE_COUNT : DESKTOP_VISIBLE_COUNT);
+      setVisibleCount(
+        mobileQuery.matches
+          ? 1
+          : tabletQuery.matches
+            ? TABLET_VISIBLE_COUNT
+            : DESKTOP_VISIBLE_COUNT,
+      );
     };
     updateViewport();
-    mobileQuery.addEventListener('change', updateViewport);
-    tabletQuery.addEventListener('change', updateViewport);
+    mobileQuery.addEventListener("change", updateViewport);
+    tabletQuery.addEventListener("change", updateViewport);
     return () => {
-      mobileQuery.removeEventListener('change', updateViewport);
-      tabletQuery.removeEventListener('change', updateViewport);
+      mobileQuery.removeEventListener("change", updateViewport);
+      tabletQuery.removeEventListener("change", updateViewport);
     };
   }, []);
 
   // Only the 5 flagship projects (flagged `featured: true` in projects.js)
   // appear in this carousel -- the full 15-project catalog lives on /projects.
-  const featuredProjects = useMemo(() => projectHome.filter((p) => p.featured), []);
+  const featuredProjects = useMemo(
+    () => projectHome.filter((p) => p.featured),
+    [],
+  );
 
   const carouselProjects = useMemo(() => {
     if (featuredProjects.length <= visibleCount) return featuredProjects;
@@ -130,7 +174,9 @@ export default function FeaturedProjects() {
     const timer = setTimeout(() => {
       setIsTransitioning(false);
       setIndex(0);
-      requestAnimationFrame(() => requestAnimationFrame(() => setIsTransitioning(true)));
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => setIsTransitioning(true)),
+      );
     }, 520);
     return () => clearTimeout(timer);
   }, [index, total]);
@@ -144,24 +190,43 @@ export default function FeaturedProjects() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <svg aria-hidden="true" className="pointer-events-none absolute bottom-0 start-0 h-40 w-64 text-white/10 rtl:-scale-x-100" viewBox="0 0 260 160" fill="none">
-        <path d="M10 160V70l20-14 20 14v90M60 160V40l22-16 22 16v120M114 160V90l18-12 18 12v70" stroke="currentColor" />
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 start-0 h-40 w-64 text-white/10 rtl:-scale-x-100"
+        viewBox="0 0 260 160"
+        fill="none"
+      >
+        <path
+          d="M10 160V70l20-14 20 14v90M60 160V40l22-16 22 16v120M114 160V90l18-12 18 12v70"
+          stroke="currentColor"
+        />
         <path d="M0 160h260" stroke="currentColor" />
       </svg>
 
       <div className="relative z-10 mx-auto flex w-full flex-col gap-8 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-10 lg:px-8">
         <div className="shrink-0 lg:w-[290px] xl:w-[340px]">
-          <h2 className="text-4xl font-extrabold leading-[1.08] md:text-5xl xl:text-6xl">{t('featured.headingLine1')}</h2>
+          <h2
+            data-aos={fromStart}
+            data-aos-delay="100"
+            className="text-4xl font-extrabold leading-[1.08] md:text-5xl xl:text-6xl"
+          >
+            {t("featured.headingLine1")}
+          </h2>
 
           <span className="mt-5 block h-[3px] w-10 bg-white" />
 
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">{t('featured.subtitle')}</p>
-
+          <p
+            data-aos={fromStart}
+            data-aos-delay="250"
+            className="mt-5 max-w-xs text-sm leading-relaxed text-white/60"
+          >
+            {t("featured.subtitle")}
+          </p>
           <Link
             to="/projects"
             className="group mt-7 inline-flex items-center gap-4 border border-white px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-white hover:text-primary-900"
           >
-            <span>{t('featured.cta')}</span>
+            <span>{t("featured.cta")}</span>
             <span className="transition-transform duration-300 group-hover:-translate-x-1">
               <NavArrowIcon />
             </span>
@@ -188,9 +253,11 @@ export default function FeaturedProjects() {
               </button>
 
               <div className="ms-2 flex items-center gap-2 text-xs text-white/50">
-                <span className="font-bold text-white">{String(activeIndex + 1).padStart(2, '0')}</span>
+                <span className="font-bold text-white">
+                  {String(activeIndex + 1).padStart(2, "0")}
+                </span>
                 <span>/</span>
-                <span>{String(total).padStart(2, '0')}</span>
+                <span>{String(total).padStart(2, "0")}</span>
               </div>
             </div>
           )}
@@ -198,7 +265,7 @@ export default function FeaturedProjects() {
 
         <div className="min-w-0 flex-1 overflow-hidden px-1 py-2 sm:p-3">
           <div
-            className={`flex h-[360px] sm:h-[400px] lg:h-[440px] xl:h-[460px] ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+            className={`flex h-[360px] sm:h-[400px] lg:h-[440px] xl:h-[460px] ${isTransitioning ? "transition-transform duration-500 ease-out" : ""}`}
             style={{
               width: `${(carouselProjects.length / visibleCount) * 100}%`,
               transform: `translateX(${(isArabic ? index : -index) * (100 / carouselProjects.length)}%)`,
@@ -207,10 +274,14 @@ export default function FeaturedProjects() {
             {carouselProjects.map((project, i) => {
               const realIndex = i % total;
               return (
-                <div key={`${project.slug}-${i}`} className="h-full shrink-0" style={{ width: `${100 / carouselProjects.length}%` }}>
+                <div
+                  key={`${project.slug}-${i}`}
+                  className="h-full shrink-0"
+                  style={{ width: `${100 / carouselProjects.length}%` }}
+                >
                   <ProjectSlide
                     project={project}
-                    number={String(realIndex + 1).padStart(2, '0')}
+                    number={String(realIndex + 1).padStart(2, "0")}
                     isActive={realIndex === activeIndex && i === index}
                     skew={skew}
                   />
