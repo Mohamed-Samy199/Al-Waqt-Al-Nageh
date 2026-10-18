@@ -25,6 +25,11 @@ const copy = {
       description: 'Explore reinforced concrete, formwork, rebar, mass concrete pours, excavation, shoring, dewatering, and finishing services from Al Waqt Al Nageh.',
       keywords: 'reinforced concrete contractor, formwork and scaffolding, rebar fixing, mass concrete pours, excavation and dewatering, finishing contractor',
     },
+    careers: {
+      title: 'Careers at Al Waqt Al Nageh | Construction & Buildings',
+      description: 'Join the team at Al Waqt Al Nageh, a construction and finishing contractor delivering projects across Kuwait and Saudi Arabia.',
+      keywords: 'construction careers, construction jobs Kuwait, construction jobs Saudi Arabia, construction company careers',
+    },
     contact: {
       title: 'Contact Al Waqt Al Nageh | Construction Contractor',
       description: 'Contact Al Waqt Al Nageh for construction, structural, finishing, and specialist work packages in Kuwait and Saudi Arabia.',
@@ -57,6 +62,11 @@ const copy = {
       description: 'تعرف على خدمات الخرسانة المسلحة والشدات والتسليح والصبات الكبيرة والحفر والتدعيم وخفض المياه وأعمال التشطيبات.',
       keywords: 'مقاول خرسانة مسلحة, شدات وسقالات, تثبيت حديد التسليح, صبات خرسانة, حفر وتدعيم, مقاول تشطيبات',
     },
+    careers: {
+      title: 'وظائف شركة الوقت الناجح | التشييد والمباني',
+      description: 'انضم إلى فريق شركة الوقت الناجح للمقاولات والإنشاءات، والتي تنفذ المشاريع في الكويت والمملكة العربية السعودية.',
+      keywords: 'وظائف المقاولات, وظائف الإنشاءات الكويت, وظائف الإنشاءات السعودية, وظائف شركات المقاولات',
+    },
     contact: {
       title: 'تواصل مع شركة الوقت الناجح | مقاولات وإنشاءات',
       description: 'تواصل مع شركة الوقت الناجح لتنفيذ الأعمال الإنشائية والهيكلية والتشطيبات وحزم الأعمال المتخصصة في الكويت والسعودية.',
@@ -87,6 +97,7 @@ export function getPageSeo(pathname, language, project) {
   if (pathname === '/about') return { ...dictionary.about, type: 'website', section: 'about' };
   if (pathname === '/projects') return { ...dictionary.projects, type: 'website', section: 'projects' };
   if (pathname === '/services') return { ...dictionary.services, type: 'website', section: 'services' };
+  if (pathname === '/careers') return { ...dictionary.careers, type: 'website', section: 'careers' };
   if (pathname === '/contact') return { ...dictionary.contact, type: 'website', section: 'contact' };
   return { ...dictionary.notFound, type: 'website', section: 'not-found', noindex: true };
 }

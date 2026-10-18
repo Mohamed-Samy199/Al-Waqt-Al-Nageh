@@ -273,6 +273,19 @@
       "project": "New Project",
       "career": "Careers",
       "other": "Other"
+    },
+    "errors": {
+      "nameRequired": "Name is required.",
+      "nameMin": "Name must be at least 2 characters.",
+      "nameMax": "Name is too long.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "messageRequired": "Message is required.",
+      "messageMin": "Message must be at least 5 characters.",
+      "messageMax": "Message is too long (max 2000 characters).",
+      "generic": "Something went wrong while sending your message. Please try again.",
+      "tooManyRequests": "Too many attempts. Please try again in a few minutes."
     }
   },
   "careers": {
@@ -339,10 +352,12 @@
         "sending": "Sending..."
       },
       "errors": {
-        "required": "This field is required.",
-        "phone": "Please enter a valid phone number.",
-        "cvType": "Please upload a PDF or Word file.",
-        "cvSize": "The file is larger than 5 MB."
+        "nameInvalid": "Please enter a valid name (2–100 characters).",
+        "email": "Please enter a valid email address.",
+        "experience": "Experience must be a whole number between 0 and 60.",
+        "messageMax": "Message is too long (max 2000 characters).",
+        "generic": "Something went wrong while sending your application. Please try again.",
+        "tooManyRequests": "Too many attempts. Please try again later."
       },
       "successTitle": "Application received",
       "successText": "Thank you for your interest in Al Waqt Al Nageh. We will review your details and contact you if there is a suitable opening.",
@@ -445,7 +460,7 @@
       }
     }
   },
-    "notFound": {
+  "notFound": {
     "title": "Page not found",
     "text": "The page you are looking for does not exist or may have moved.",
     "cta": "Return to homepage"

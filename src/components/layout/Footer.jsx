@@ -187,6 +187,24 @@ export default function Footer() {
               </a>
 
               <a
+                href="tel:+966567743453"
+                className="group flex items-center gap-4"
+              >
+                <Phone
+                  size={17}
+                  strokeWidth={1.3}
+                  className="text-white/50 transition-colors group-hover:text-white"
+                />
+
+                <span
+                  className="text-sm text-white/60 transition-colors group-hover:text-white"
+                  dir="ltr"
+                >
+                  +966 56 774 3453
+                </span>
+              </a>
+
+              <a
                 href="mailto:info@n-alnageh.com"
                 className="group flex items-center gap-4"
               >

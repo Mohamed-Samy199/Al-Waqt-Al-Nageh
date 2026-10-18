@@ -6,7 +6,7 @@ export const projects = [
   {
     slug: 'kuwait-airways-hq', category: 'governmental', featured: true,
     name: 'Kuwait Airways Headquarters', location: 'Kuwait Airport Premises, Kuwait',
-    image: asset('kuwait-airways-hq', '1.jpg'), gallery: gallery('kuwait-airways-hq', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']),
+    image: asset('kuwait-airways-hq', '1.jpg'), gallery: gallery('kuwait-airways-hq', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg']),
     year: '1992–1996', duration: '48 months', contractValue: 'KD 158M (US$58.5M)',
     description: 'A finished office building of 42,000 m² where structural glazing for curtain walls was used for the first time in Kuwait.',
     keyFeatures: ['42,000 m² finished office building', 'First use of structural glazing for curtain walls in Kuwait'],
@@ -22,7 +22,7 @@ export const projects = [
   {
     slug: 'burgan-bank-hq', category: 'towers', featured: true,
     name: 'Burgan Bank Headquarters', location: 'Kuwait City, Kuwait',
-    image: asset('burgan-bank-hq', '1.jpg'), gallery: gallery('burgan-bank-hq', ['1.jpg', '2.jpg', '3.jpg', '4.png']),
+    image: asset('burgan-bank-hq', '1.jpg'), gallery: gallery('burgan-bank-hq', ['1.jpg', '2.jpg', '3.jpg', '4.png', '5.jpg', '6.jpg', '7.jpg']),
     year: '2000–2003', duration: '27 months', contractValue: 'KD 7.2M (US$26.6M)',
     description: 'Construction of a high-end 33-storey office building with two basement levels.',
     keyFeatures: ['Executive floors', 'Executive meeting rooms', 'Rooftop helipad'],
@@ -30,7 +30,7 @@ export const projects = [
   {
     slug: 'dhow-tower', category: 'towers',
     name: 'Dhow Tower', location: 'Kuwait',
-    image: asset('dhow-tower', '1.jpg'), gallery: gallery('dhow-tower', ['1.jpg', '2.jpg', '3.jpg', '4.jpg']),
+    image: asset('dhow-tower', '1.jpg'), gallery: gallery('dhow-tower', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']),
     year: '2004–2006', duration: '28 months', contractValue: 'KD 7M (US$25.9M)',
     description: 'Construction contractor for a 31-storey office building with basement parking, covering civil and structural works including earthworks, dewatering, shoring, concrete works, blockwork, basement tanking and roofing works.',
     keyFeatures: ['31-storey office building', 'Basement parking', 'Integrated electrical substation and water tanks', 'Conference halls and related facilities'],
@@ -38,7 +38,7 @@ export const projects = [
   {
     slug: 'arraya-office-tower', category: 'towers', featured: true,
     name: 'Arraya Office Tower', location: 'Kuwait',
-    image: asset('arraya-office-tower', '1.jpg'), gallery: gallery('arraya-office-tower', ['1.jpg', '2.jpg', '3.jpg']),
+    image: asset('arraya-office-tower', '1.jpg'), gallery: gallery('arraya-office-tower', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']),
     year: '2005–2009', duration: '39 months', contractValue: 'KD 30M (US$100M)',
     description: 'Construction of a prestigious 60-storey tower with three basement levels. Architect: Fentress Bradburn – USA.',
     keyFeatures: ['60-storey tower', 'Three basement levels', 'Shares the compound with Arraya Center and Courtyard Marriott Hotel', 'Considered the first skyscraper in Kuwait'],
@@ -46,7 +46,7 @@ export const projects = [
   {
     slug: 'nbk-headquarters', category: 'towers', featured: true,
     name: 'National Bank of Kuwait – Headquarters', location: 'Sharq Area, Kuwait',
-    image: asset('nbk-headquarters', '1.jpg'), gallery: gallery('nbk-headquarters', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']),
+    image: asset('nbk-headquarters', '1.jpg'), gallery: gallery('nbk-headquarters', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg']),
     year: '2013–2017', duration: '42 months', contractValue: 'KD 114M (US$380M)',
     description: 'A 56-floor headquarters tower for NBK comprising a bank branch and a museum. The tower reaches a height of 300 m.',
     keyFeatures: ['300 m high, 56-floor tower', 'Continuously changing curved geometry', '14 protruding GRC-clad fins', 'Special blast HVAC equipment'],
@@ -55,7 +55,7 @@ export const projects = [
   {
     slug: 'assima-tower', category: 'towers', featured: true,
     name: 'Assima Tower Project', location: 'Sharq, Kuwait',
-    image: asset('assima-tower', '1.jpg'), gallery: gallery('assima-tower', ['1.jpg', '2.jpg', '3.jpg', '4.jpg']),
+    image: asset('assima-tower', '1.jpg'), gallery: gallery('assima-tower', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg']),
     year: '52 months', duration: '52 months', contractValue: 'KD 147M',
     description: 'The Assima development consists of a 300m-high, 55-storey office tower and podium building with 7 levels of retail, including food and beverages, leisure and basement car parking. Above the retail and leisure facility, a hotel includes 1, 2 and 3-bedroom executive apartments. The project also includes a VIP car park and a Municipality building.',
     keyFeatures: ['300 m high tower', '55 storeys', '7-level retail podium', 'Hotel with executive apartments', 'Rooftop gardens and public atrium'],
@@ -64,7 +64,7 @@ export const projects = [
   {
     slug: 'arraya-center-marriott', category: 'commercial',
     name: 'Arraya Center & Courtyard Marriott Hotel', location: 'Kuwait',
-    image: asset('arraya-center-marriott', '1.png'), gallery: gallery('arraya-center-marriott', ['1.png', '2.png', '3.png', '4.png']),
+    image: asset('arraya-center-marriott', '1.png'), gallery: gallery('arraya-center-marriott', ['1.png', '2.png', '3.png', '4.png', '5.jpg', '6.jpg', '7.jpg']),
     year: '2000–2004', duration: '45 months', contractValue: 'KD 28M (US$88M)',
     description: 'A highly sophisticated 35-storey tower comprising a high-end shopping mall, an office building, a four-star hotel with 306 rooms and a 5-storey car park.',
     keyFeatures: ['Special steel bridge between the car park and building', 'Two-level, 33-metre-long lifts', 'Double-height convention hall of 1,800 m²'],
@@ -72,7 +72,7 @@ export const projects = [
   {
     slug: 'marina-mall', category: 'commercial', featured: true,
     name: 'Marina Mall', location: 'Salmiya, Kuwait',
-    image: asset('marina-mall', '1.png'), gallery: gallery('marina-mall', ['1.png', '2.png', '3.png']),
+    image: asset('marina-mall', '1.png'), gallery: gallery('marina-mall', ['1.png', '2.png', '3.png', '4.jpg', '5.jpg']),
     year: '2000–2002', duration: '28 months', contractValue: 'KD 19M (US$70.4M)',
     description: 'Construction of a shopping mall with parking space, a mosque and theatres.',
     keyFeatures: ['Air-conditioned glass bridge spanning 100 metres', 'Connection over Gulf Road to the coastal development'],
@@ -80,7 +80,7 @@ export const projects = [
   {
     slug: 'avenues-khobar', category: 'commercial', featured: true,
     name: 'The Avenues Khobar – KSA', location: 'Intersection of King Saud Road with Prince Sultan Road, Al Khobar, Saudi Arabia',
-    image: asset('avenues-khobar', '1.png'), gallery: gallery('avenues-khobar', ['1.png', '2.png', '3.png']),
+    image: asset('avenues-khobar', '1.png'), gallery: gallery('avenues-khobar', ['1.png', '2.png', '3.png', '4.jpg', '5.jpg', '6.jpg']),
     year: 'Ongoing', duration: '36 months', contractValue: 'SAR 3,660,000,000',
     description: 'The Avenues Khobar is a state-of-the-art, iconic shopping mall extending over approximately 197,000 m². The project includes a mall with an approximate built-up area of 710,000 m², a District Cooling Plant building and the mixed-use Canopy Tower T2 with an approximate built-up area of 27,000 m². The mall includes three levels of retail above two basement levels, with The Gardens, Grand Avenue, The Souk, The Plaza, The Mall, Town Square, Urban Walk and an FEC Entertainment Block. The Canopy Tower extends 23 levels above ground and includes three basement levels.',
     keyFeatures: ['Approx. 197,000 m² development', 'Approx. 710,000 m² mall BUA', '23-level Canopy Tower', 'Retail, dining, leisure and entertainment districts'],
@@ -88,7 +88,7 @@ export const projects = [
   {
     slug: 'eye-center-hospital', category: 'health',
     name: 'Eye Center Hospital', location: 'Sulaibakhat, Kuwait',
-    image: asset('eye-center-hospital', '1.png'), gallery: gallery('eye-center-hospital', ['1.png', '2.png']),
+    image: asset('eye-center-hospital', '1.png'), gallery: gallery('eye-center-hospital', ['1.png', '2.png','3.jpg', '4.jpg', '5.jpg']),
     year: '1991–1994', duration: '34 months', contractValue: 'KD 2.75M (US$10.2M)',
     description: 'Contractor for a specialized 80-bed eye hospital with the latest equipment and furnishings.',
     keyFeatures: ['80-bed specialized eye hospital', 'Latest equipment and furnishings'],
@@ -96,7 +96,7 @@ export const projects = [
   {
     slug: 'ent-mtc-hospital', category: 'health',
     name: 'Ear, Nose & Throat MTC Hospital', location: 'Kuwait',
-    image: asset('ent-mtc-hospital', '1.png'), gallery: gallery('ent-mtc-hospital', ['1.png', '2.png']),
+    image: asset('ent-mtc-hospital', '1.png'), gallery: gallery('ent-mtc-hospital', ['1.png', '2.png','3.jpg', '4.jpg']),
     year: '1996–1998', duration: '25 months', contractValue: 'KD 3M (US$11.1M)',
     description: 'Contractor for an 87-bed specialized hospital.',
     keyFeatures: ['7 floors', '3 inpatient floors', '4 floors for external clinics and operation blocks'],
@@ -104,7 +104,7 @@ export const projects = [
   {
     slug: 'nbk-children-hospital', category: 'health',
     name: 'NBK Children Hospital', location: 'Sulaibakhat, Kuwait',
-    image: asset('nbk-children-hospital', '1.png'), gallery: gallery('nbk-children-hospital', ['1.png']),
+    image: asset('nbk-children-hospital', '1.png'), gallery: gallery('nbk-children-hospital', ['1.png', '2.jpg', '3.jpg']),
     year: '1997–1999', duration: '23 months', contractValue: 'KD 3M (US$11.1M)',
     description: 'Contractor for a modern 96-bed, 3-floor children’s hospital.',
     keyFeatures: ['96 beds', '3 floors', 'External clinics', '4 operation blocks'],
@@ -112,7 +112,7 @@ export const projects = [
   {
     slug: 'salmiya-waterfront', category: 'coastal', featured: true,
     name: 'Salmiya Water Front (Marina)', location: 'Salmiya, Kuwait',
-    image: asset('salmiya-waterfront', '1.jpg'), gallery: gallery('salmiya-waterfront', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg']),
+    image: asset('salmiya-waterfront', '1.jpg'), gallery: gallery('salmiya-waterfront', ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg']),
     year: '2002–2004', duration: '32 months', contractValue: 'KD 27.8M (US$103M)',
     description: 'A coastal development comprising a marina, corniche, five-star hotel, beach, recreational facilities, restaurants, shopping and the 60-metre Marina Tower.',
     keyFeatures: ['Marina and corniche', 'Five-star hotel', 'Beach and recreational facilities', 'Restaurants, shopping and Marina Tower'],
@@ -120,7 +120,7 @@ export const projects = [
   {
     slug: 'new-airport-hangar', category: 'airports',
     name: 'New Airport Hangar (at VVIP)', location: 'Kuwait International Airport, Kuwait',
-    image: asset('new-airport-hangar', '1.png'), gallery: gallery('new-airport-hangar', ['1.png']),
+    image: asset('new-airport-hangar', '1.png'), gallery: gallery('new-airport-hangar', ['1.png', '2.jpg']),
     year: '2013–2014', duration: '22 months', contractValue: 'KD 29M (US$96M)',
     description: 'The New Aircraft Hangar covers 25,000 m² of air-conditioned space to accommodate eight aircraft of different types and sizes. It also includes office space and electro-mechanical rooms.',
     keyFeatures: ['25,000 m² air-conditioned space', 'Capacity for eight aircraft', 'Office space and electro-mechanical rooms', 'Undulating roof with distinctive front and rear elevations'],
