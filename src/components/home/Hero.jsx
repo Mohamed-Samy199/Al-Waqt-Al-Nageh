@@ -16,7 +16,7 @@ const slides = [
         "شركة مقاولات وإنشاءات بخبرة تمتد لأكثر من 40 عامًا في تنفيذ المشاريع الكبرى في الكويت والمملكة العربية السعودية.",
     },
     en: {
-      eyebrow: "AL WAQT AL NAGEH CONTRACTING & CONSTRUCTION",
+      eyebrow: "Al Nageh CONTRACTING & CONSTRUCTION",
       title: "Building with Quality. Delivering on Time.",
       description:
         "A construction and contracting company with more than 40 years of experience delivering major projects across Kuwait and Saudi Arabia with discipline.",
@@ -101,7 +101,7 @@ export default function Hero() {
     <section
       dir={isArabic ? "rtl" : "ltr"}
       aria-label={
-        isArabic ? "الواجهة الرئيسية لشركة الوقت الناجح" : "Al Nageh main hero"
+        isArabic ? "الواجهة الرئيسية لشركة الناجح" : "Al Nageh main hero"
       }
       className="relative isolate min-h-[720px] overflow-hidden bg-primary-900 text-white md:min-h-[min(820px,100svh)]"
     >
@@ -147,7 +147,7 @@ export default function Hero() {
                 <img
                   className={mediaClass}
                   src={slide.src}
-                  alt="Al Waqt Al Nageh"
+                  alt="Al Nageh"
                   aria-hidden="true"
                 />
               )}

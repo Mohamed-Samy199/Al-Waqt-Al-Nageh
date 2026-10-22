@@ -8,7 +8,7 @@
     "careers": "Careers"
   },
   "hero": {
-    "tagline": "Al Waqt Al Nageh Contracting & Construction",
+    "tagline": "Al Nageh Contracting & Construction",
     "title": "Building with Quality. Delivering on Time.",
     "subtitle": "A construction and contracting company with more than 40 years of experience delivering major projects across Kuwait and Saudi Arabia with discipline, safety, and quality at every stage.",
     "cta_projects": "View Our Projects",
@@ -22,9 +22,9 @@
   },
   "about": {
     "eyebrow": "About Us",
-    "title": "About Al Waqt Al Nageh",
+    "title": "About Al Nageh",
     "heading": "Execution experience. Schedule discipline. Lasting quality.",
-    "text": "Al Waqt Al Nageh is a Kuwait-based contracting and construction company with more than 40 years of experience delivering government, commercial, healthcare, high-rise, and special construction projects to approved standards and schedules.",
+    "text": "Al Nageh is a Kuwait-based contracting and construction company with more than 40 years of experience delivering government, commercial, healthcare, high-rise, and special construction projects to approved standards and schedules.",
     "cta": "Meet the company",
     "pillars": {
       "quality": {
@@ -113,7 +113,7 @@
     }
   },
   "whyUs": {
-    "eyebrow": "Why Al Waqt Al Nageh",
+    "eyebrow": "Why Al Nageh",
     "title": "A delivery partner you can rely on.",
     "subtitle": "We combine field experience, disciplined planning, and flexible contracting scope to give clients a clear result.",
     "items": {
@@ -360,7 +360,7 @@
         "tooManyRequests": "Too many attempts. Please try again later."
       },
       "successTitle": "Application received",
-      "successText": "Thank you for your interest in Al Waqt Al Nageh. We will review your details and contact you if there is a suitable opening.",
+      "successText": "Thank you for your interest in Al Nageh. We will review your details and contact you if there is a suitable opening.",
       "another": "Send another application"
     }
   },

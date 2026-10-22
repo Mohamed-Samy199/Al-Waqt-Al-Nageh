@@ -107,7 +107,7 @@ export default function StoryHero() {
                 <span className="h-[1.5px] w-6 bg-accent" />
                 <span
                   data-aos="fade-down"
-                  className="text-xs md:text-xl font-bold uppercase tracking-[0.25em] text-accent rtl:normal-case rtl:tracking-normal"
+                  className="text-xl font-bold uppercase tracking-[0.25em] text-accent rtl:normal-case rtl:tracking-normal"
                 >
                   {t('aboutPage.storyEyebrow')}
                 </span>

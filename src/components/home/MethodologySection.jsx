@@ -19,7 +19,7 @@ export default function MethodologySection() {
       >
         <img
           src="/images/about/methodology.png"
-          alt="Al Waqt Al Nageh"
+          alt="Al Nageh"
           loading="lazy"
           className="h-full w-full animate-gentle-zoom object-cover object-center motion-reduce:animate-none"
         />
@@ -35,7 +35,7 @@ export default function MethodologySection() {
         <div className="mb-12 max-w-3xl sm:mb-16 lg:max-w-xl">
           <span
             data-aos="fade-down"
-            className="mb-4 flex items-center gap-3 text-xs md:text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal"
+            className="mb-4 flex items-center gap-3 text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal"
           >
             {t('methodology.eyebrow')}
           </span>
@@ -66,7 +66,7 @@ export default function MethodologySection() {
             >
               <img
                 src="/images/logo/logo-white.png"
-                alt="Al Waqt Al Nageh"
+                alt="Al Nageh"
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 z-0 m-auto w-56 object-contain opacity-0 mix-blend-screen transition-opacity duration-500 group-hover:opacity-20"
               />

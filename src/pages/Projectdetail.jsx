@@ -47,7 +47,7 @@ function Lightbox({ images, index, onClose, onPrev, onNext }) {
 
       <img
         src={images[index]}
-        alt="Al Waqt Al Nageh"
+        alt="Al Nageh"
         onClick={(e) => e.stopPropagation()}
         className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
       />

@@ -8,7 +8,7 @@ export default function KhobarHighlight() {
     <section className="relative py-32 bg-ink">
       <img
         src="/images/projects/avenues-khobar/cover.jpg"
-        alt="Al Waqt Al Nageh"
+        alt="Al Nageh"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       />
       <Container className="relative z-10 max-w-2xl">

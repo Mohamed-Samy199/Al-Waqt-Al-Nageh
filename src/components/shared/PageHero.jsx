@@ -64,7 +64,7 @@ export default function PageHero({
           {eyebrow && (
             <span
               data-aos="fade-down"
-              className="mb-4 block text-xs md:text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal"
+              className="mb-4 block text-xl font-bold uppercase tracking-[0.24em] text-primary-700 rtl:normal-case rtl:tracking-normal"
             >
               {eyebrow}
             </span>

@@ -413,7 +413,7 @@ export default function ServicesSafetyQuality() {
             <div className="relative h-56 overflow-hidden md:h-72">
               <img
                 src={activeItem.image}
-                alt="Al Waqt Al Nageh"
+                alt="Al Nageh"
                 className={`h-full w-full object-cover transition-transform ease-out motion-reduce:transition-none ${
                   visible ? "scale-100" : "scale-110"
                 }`}

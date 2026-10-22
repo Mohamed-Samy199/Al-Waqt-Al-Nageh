@@ -94,7 +94,7 @@ export default function ServiceIntro() {
                         }`}
                       >
                         <div className="absolute inset-0 opacity-10">
-                          <img src={card.image} alt="Al Waqt Al Nageh" className="h-full w-full object-cover grayscale" />
+                          <img src={card.image} alt="Al Nageh" className="h-full w-full object-cover grayscale" />
                         </div>
                         <div className="absolute -end-6 -top-8 h-24 w-24 rounded-full border border-accent/30" />
                         <div className="relative flex h-full flex-col justify-between">

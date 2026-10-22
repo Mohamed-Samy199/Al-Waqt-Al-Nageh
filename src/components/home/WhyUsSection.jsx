@@ -23,7 +23,7 @@ export default function WhyUsSection() {
         {/* Poster: shows while the video loads or if it fails */}
         <img
           src={POSTER_SRC}
-          alt="Al Waqt Al Nageh"
+          alt="Al Nageh"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -56,7 +56,7 @@ export default function WhyUsSection() {
             {/* <span className="h-px w-8 bg-white" /> */}
             <span
               data-aos="fade-down"
-              className="text-xs md:text-xl font-semibold uppercase tracking-[0.3em] text-white rtl:normal-case rtl:tracking-normal"
+              className="text-xl font-semibold uppercase tracking-[0.3em] text-white rtl:normal-case rtl:tracking-normal"
             >
               {t('whyUs.eyebrow')}
             </span>

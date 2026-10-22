@@ -36,7 +36,7 @@ for (const pathname of routes) {
     metaTag('property', 'og:type', seo.type),
     metaTag('property', 'og:title', seo.title),
     metaTag('property', 'og:description', seo.description),
-    metaTag('property', 'og:site_name', 'Al Waqt Al Nageh Construction and Buildings'),
+    metaTag('property', 'og:site_name', 'Al Nageh Construction and Buildings'),
     canonical ? metaTag('property', 'og:url', canonical) : '',
     image ? metaTag('property', 'og:image', image) : '',
     metaTag('name', 'twitter:card', image ? 'summary_large_image' : 'summary'),

@@ -1,6 +1,6 @@
-# Al Waqt Al Nageh — Corporate Website
+# Al Nageh — Corporate Website
 
-Official bilingual (English / Arabic) marketing website for **Al Waqt Al Nageh**, a Kuwait-based construction company with nearly 40 years of experience and an expanding presence in Saudi Arabia.
+Official bilingual (English / Arabic) marketing website for **Al Nageh**, a Kuwait-based construction company with nearly 40 years of experience and an expanding presence in Saudi Arabia.
 
 ## Tech Stack
 

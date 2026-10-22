@@ -49,7 +49,7 @@ function ValueCard({ valueKey, Icon, image, number, delay }) {
       <div className="pointer-events-none absolute top-0 end-0 h-48 w-2/3 overflow-hidden rounded-es-[100px]">
         <img
           src={image}
-          alt="Al Waqt Al Nageh"
+          alt="Al Nageh"
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
